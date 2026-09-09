@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090b0f">
+<title>The Wrong Side of Morning — EchoStory</title>
+<style>
+:root{--bg:#090b0f;--panel:#11151b;--panel2:#171d25;--text:#edf2f7;--muted:#9ba8b7;--line:#25303c;--accent:#c9d7e6;--glow:#7f9dbb;--danger:#b86262}
+*{box-sizing:border-box}html,body{margin:0;background:radial-gradient(circle at 18% 5%,rgba(91,111,135,.16),transparent 34%),linear-gradient(180deg,#0b0f14 0%,#090b0f 58%,#07090c 100%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;min-height:100%}body{padding:24px}.wrap{max-width:980px;margin:auto}.topline{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:20px}.brand{letter-spacing:.22em;text-transform:uppercase;font-size:.74rem;color:#b4c0cd}.chapter{font-size:.76rem;color:var(--muted);letter-spacing:.08em}.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(21,27,35,.96),rgba(12,16,22,.98));border-radius:24px;overflow:hidden;box-shadow:0 24px 70px rgba(0,0,0,.48)}.hero{display:grid;grid-template-columns:minmax(260px,360px) 1fr;min-height:500px}.art{position:relative;overflow:hidden;min-height:390px;background:linear-gradient(180deg,rgba(5,7,10,.04),rgba(5,7,10,.8)),radial-gradient(circle at 68% 16%,rgba(212,225,236,.55),rgba(212,225,236,.06) 18%,transparent 30%),linear-gradient(165deg,#263544 0%,#172330 38%,#0d141c 65%,#070b10 100%)}.art:before{content:"";position:absolute;left:-5%;right:-5%;bottom:18%;height:1px;background:rgba(221,231,240,.32);box-shadow:0 -18px 0 rgba(221,231,240,.08),0 20px 0 rgba(221,231,240,.09),0 45px 0 rgba(221,231,240,.04);transform:rotate(-3deg)}.art:after{content:"";position:absolute;left:8%;right:0;bottom:-1%;height:33%;background:linear-gradient(170deg,transparent 0 22%,rgba(1,4,7,.78) 23% 100%);clip-path:polygon(0 80%,18% 48%,31% 58%,48% 20%,63% 46%,78% 25%,100% 57%,100% 100%,0 100%)}.sun{position:absolute;width:112px;height:112px;border-radius:50%;right:13%;top:10%;background:radial-gradient(circle,#dfe6eb 0,#bccbd7 29%,rgba(181,198,211,.22) 50%,transparent 72%);filter:blur(.3px)}.sunline{position:absolute;right:17%;top:11%;height:160px;width:1px;background:linear-gradient(#d4e0e8,transparent);transform:rotate(13deg);opacity:.38}.road{position:absolute;width:110%;height:95px;left:-8%;bottom:3%;background:linear-gradient(180deg,#151b22,#090d12);transform:skewY(-4deg);border-top:1px solid rgba(214,227,238,.15)}.road:after{content:"";position:absolute;left:14%;right:15%;top:48%;height:2px;background:repeating-linear-gradient(90deg,rgba(213,221,228,.35) 0 34px,transparent 34px 62px)}.freq{position:absolute;left:28px;bottom:30px;z-index:3;font:700 64px/1 ui-monospace,SFMono-Regular,Consolas,monospace;color:rgba(228,237,244,.07);letter-spacing:-.08em}.art-copy{position:absolute;left:28px;top:28px;right:28px;z-index:4}.kicker{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:#bdc9d4;margin-bottom:12px}.art-title{font-size:clamp(2rem,5vw,3.8rem);line-height:.94;font-weight:780;max-width:300px;letter-spacing:-.045em}.art-sub{margin-top:14px;color:#aebbc8;font-size:.9rem}.player{padding:34px;display:flex;flex-direction:column;justify-content:center}.eyebrow{color:var(--muted);font-size:.77rem;text-transform:uppercase;letter-spacing:.16em}h1{font-size:clamp(2rem,5vw,4.7rem);line-height:.92;margin:10px 0 14px;letter-spacing:-.05em}.subtitle{color:#b7c3ce;max-width:590px;line-height:1.55;margin:0 0 28px}.now{border:1px solid var(--line);background:#0c1016;border-radius:16px;padding:14px 16px;margin-bottom:18px}.now strong{display:block;font-size:.83rem;color:#dfe7ee}.now span{display:block;margin-top:5px;font-size:.78rem;color:var(--muted)}.seekrow{display:grid;grid-template-columns:48px 1fr 48px;align-items:center;gap:10px;font-size:.74rem;color:var(--muted)}input[type=range]{width:100%;accent-color:#b7c8d8}.controls{display:flex;align-items:center;gap:12px;margin:18px 0}button,.filelabel{border:1px solid var(--line);background:#151b22;color:var(--text);border-radius:999px;cursor:pointer}button:hover,.filelabel:hover{background:#1d2630}.icon{width:46px;height:46px;font-size:1rem}.play{width:62px;height:62px;font-size:1.35rem;background:#e8eef4;color:#0b1117;border-color:#e8eef4}.play:hover{background:#fff}.vol{display:flex;align-items:center;gap:9px;margin-left:auto;color:var(--muted);font-size:.8rem}.filelabel{display:inline-flex;align-items:center;justify-content:center;padding:10px 14px;font-size:.78rem}#file{display:none}.status{font-size:.73rem;color:var(--muted);min-height:18px}.bottom{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.panel{border:1px solid var(--line);background:rgba(13,17,23,.92);border-radius:18px;padding:20px}.panel h2{margin:0 0 12px;font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;color:#d1dce5}.markers{display:grid;gap:9px}.marker{display:grid;grid-template-columns:10px 1fr;gap:10px;align-items:start;color:#afbbc7;font-size:.84rem;line-height:1.4}.dot{width:7px;height:7px;border:1px solid #8396a8;border-radius:50%;margin-top:5px}details summary{cursor:pointer;color:#d9e2ea;font-size:.84rem}.lyrics{white-space:pre-wrap;color:#aeb9c4;font-size:.82rem;line-height:1.55;margin-top:14px;max-height:420px;overflow:auto;padding-right:7px}.footer{display:flex;justify-content:space-between;gap:18px;color:#6f7c89;font-size:.7rem;margin-top:18px;padding:0 4px}.pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#73889c;margin-right:8px;box-shadow:0 0 0 0 rgba(115,136,156,.5);animation:pulse 2s infinite}@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(115,136,156,0)}100%{box-shadow:0 0 0 0 rgba(115,136,156,0)}}@media(max-width:760px){body{padding:12px}.hero{grid-template-columns:1fr}.art{min-height:340px}.player{padding:25px 20px 28px}.bottom{grid-template-columns:1fr}.topline{align-items:flex-start;flex-direction:column}.vol{margin-left:0;width:100%}.controls{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="topline"><div class="brand">EchoStory · The Last Normal Night</div><div class="chapter">Track 02 / Chapter: Exploration</div></div>
+<section class="card hero">
+<div class="art" aria-label="Abstract dawn over a subtly wrong Coeur d'Alene"><div class="sun"></div><div class="sunline"></div><div class="road"></div><div class="art-copy"><div class="kicker">Morning arrived wrong</div><div class="art-title">THE WRONG SIDE OF MORNING</div><div class="art-sub">88 BPM · North Idaho SwampHop · EchoStory</div></div><div class="freq">03</div></div>
+<div class="player"><div class="eyebrow">Now playing</div><h1>The Wrong Side of Morning</h1><p class="subtitle">Same sun. Wrong light. Same town carrying somebody else’s life. Track 2 moves the EchoStory from displacement into investigation.</p><div class="now"><strong id="filename">02-the-wrong-side-of-morning.mp3</strong><span><span class="pulse"></span><span id="sourceStatus">Looking for same-folder audio</span></span></div><audio id="audio" preload="metadata"><source src="02-the-wrong-side-of-morning.mp3" type="audio/mpeg"><source src="The Wrong Side of Morning.mp3" type="audio/mpeg"></audio><div class="seekrow"><span id="current">0:00</span><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek"><span id="duration">0:00</span></div><div class="controls"><button class="icon" id="back" title="Back 10 seconds">↶</button><button class="play" id="play" title="Play">▶</button><button class="icon" id="forward" title="Forward 10 seconds">↷</button><label class="filelabel" for="file">Load MP3</label><input id="file" type="file" accept="audio/mpeg,audio/mp3,audio/*"><div class="vol">VOL <input id="volume" type="range" min="0" max="1" value=".9" step=".01" aria-label="Volume"></div></div><div class="status" id="status">Space = play/pause · ←/→ = seek 10s</div></div>
+</section>
+<div class="bottom"><section class="panel"><h2>Story markers</h2><div class="markers"><div class="marker"><span class="dot"></span><span>Morning arrives from the wrong side</span></div><div class="marker"><span class="dot"></span><span>CDA geography no longer agrees with memory</span></div><div class="marker"><span class="dot"></span><span>Two strangers recognize him</span></div><div class="marker"><span class="dot"></span><span>1978 plaque + last-summer photo prove different history</span></div><div class="marker"><span class="dot"></span><span>He stops asking <em>when</em> and starts asking <em>where</em></span></div><div class="marker"><span class="dot"></span><span>Frequency Three reconnects</span></div></div></section><section class="panel"><h2>Lyrics</h2><details><summary>Open compact Suno lyric master</summary><div class="lyrics">[INTRO|wrong dawn,lake air,tape hiss]
+[spoken low]
+Sun came up from the wrong damn side
+Still don't know how
+Phone said WELCOME HOME
+Like it had somewhere better to be than me
+Truck still smelled the same
+Cold coffee
+Dust
+Old jacket on the seat
+Good
+Something had to
+
+[VERSE 1|88 BPM,dusty drums,Track 1 groove slightly wrong]
+Sherman looked normal from half a block
+Then the corners quit lining up
+Fourth ran farther than Fourth should run
+One stoplight missing
+One extra one
+Storefront where the empty lot had been
+Brick looked old like it'd always been
+Street sign pointed east at the lake
+I laughed once
+Then checked it twice
+
+Map on my phone said take Lakeside north
+Lakeside never bent that way before
+Blue dot moved while I stood still
+Then snapped back like nothing was wrong
+Mountain line sitting where I knew it
+Lake below looking calm and blue
+Everything close enough to call it home
+Everything wrong enough not to
+
+[CHORUS 1|wide bass,warm but uneasy]
+Morning on the wrong side
+Same sun,wrong light
+Same town wearing somebody else's life
+I know these roads
+They don't know me right
+Every turn says familiar
+Every block says lie
+Morning on the wrong side
+Tell me what changed overnight
+
+[VERSE 2|groove opens,subtle detune]
+Pulled in where I always get gas
+Guy behind the counter looked up fast
+Didn't ask my name
+Didn't check my face
+Just said
+[spoken]
+Back already?
+I said
+You know me?
+He went quiet
+Like I asked something dangerous
+
+Woman outside with a red knit cap
+Stopped mid-step when I walked past
+Said
+Thought you weren't coming back
+Then crossed the street before I could ask
+
+Two people
+Same look
+Not surprise
+Recognition
+
+Checked the date on every screen
+Same month
+Same year
+Same damn week
+Newspaper box said Wednesday too
+Weather matched what I'd lived through
+
+So no
+This wasn't twenty years ahead
+No future skyline over my head
+Same date breathing different air
+Whatever this was
+It was already here
+
+[PRE|bass thins,road noise bends]
+Drove toward the water looking for proof
+Buoys sat wrong off Independence Point
+Red where green should've been
+Numbers I never learned
+Harbor map bolted beside the walk
+Showed three markers that don't exist
+And one shoreline road in faded print
+That ended beneath the lake
+
+[CHORUS 2|larger drums,uneasy doubles]
+Morning on the wrong side
+Same sun,wrong light
+Same town remembering some other life
+People know my face
+I don't know why
+Every answer gets smaller
+Every question gets teeth
+Morning on the wrong side
+And it keeps recognizing me
+
+[BRIDGE|drums sparse,truck interior,phone taps]
+Went back to that impossible brick
+Bronze plate by the door caught light
+BUILT 1978
+Forty years before that lot was empty in my life
+
+Pulled up a photo from last July
+Me and the truck parked right outside
+Same curb
+Same tree
+Same mountain behind
+Nothing but gravel where the building stood
+
+Held the phone against the windshield
+
+Photo said empty
+Morning said brick
+Plaque said it had always been there
+
+[dropout]
+Not the future
+Not a dream
+Same date
+Different history
+
+[VERSE 3|bass returns,calmer flow]
+Back in the truck
+Locked both doors
+Like locks meant anything anymore
+Opened maps
+Satellite
+Street view
+Old saved pins
+My house was there
+My road was there
+Three blocks over
+A neighborhood I'd never seen
+
+I kept trying to make it make sense
+Bad data
+New construction
+Anything but this
+Then I looked down at WELCOME HOME
+Still sitting there like a verdict
+
+Okay
+
+Quit asking what year it is
+Quit asking when
+Wrong question
+
+Where am I
+And why the hell does it know me
+
+[FINAL CHORUS|heavier,more resolved]
+Morning on the wrong side
+Same sun,wrong light
+Same town carrying somebody else's life
+I know these roads
+But memory ain't proof
+If the map and the pavement disagree
+Which one tells the truth?
+Morning on the wrong side
+Fine
+Show me what you are
+
+[OUTRO|truck idle,beat strips away]
+Turned the key
+Dashboard lit
+Radio dead
+Good
+Pulled onto Sherman
+Made it half a block
+[radio click]
+Display went blank
+Then one number
+3
+[static enters]
+No station name
+No bars
+Just that low tone from midnight
+I reached for the knob
+[wooden-flute growl under static]
+Then my own voice came through
+Older
+Tired
+Close
+[distorted voice]
+Don't touch the radio
+I froze
+[voice]
+You still keep the spare key taped under the seat
+[heartbeat]
+Nobody knows that
+Except me
+[radio hiss]
+[older voice]
+Good
+Then maybe you'll listen this time
+[cut to silence]</div></details></section></div>
+<div class="footer"><span>THE LAST NORMAL NIGHT · ECHOSTORY</span><span>FREQUENCY THREE // SIGNAL PENDING</span></div>
+</div>
+<script>
+const audio=document.getElementById('audio'),play=document.getElementById('play'),seek=document.getElementById('seek'),cur=document.getElementById('current'),dur=document.getElementById('duration'),volume=document.getElementById('volume'),file=document.getElementById('file'),filename=document.getElementById('filename'),sourceStatus=document.getElementById('sourceStatus'),status=document.getElementById('status');
+function fmt(s){if(!Number.isFinite(s))return'0:00';const m=Math.floor(s/60),sec=Math.floor(s%60).toString().padStart(2,'0');return`${m}:${sec}`}
+function updatePlay(){play.textContent=audio.paused?'▶':'❚❚';play.title=audio.paused?'Play':'Pause'}
+play.addEventListener('click',()=>audio.paused?audio.play():audio.pause());audio.addEventListener('play',()=>{updatePlay();sourceStatus.textContent='Playing'});audio.addEventListener('pause',()=>{updatePlay();sourceStatus.textContent=audio.currentTime?'Paused':'Ready'});audio.addEventListener('loadedmetadata',()=>{dur.textContent=fmt(audio.duration);sourceStatus.textContent='Audio loaded'});audio.addEventListener('timeupdate',()=>{cur.textContent=fmt(audio.currentTime);seek.value=audio.duration?(audio.currentTime/audio.duration)*1000:0});audio.addEventListener('ended',updatePlay);audio.addEventListener('error',()=>{sourceStatus.textContent='Same-folder MP3 not found — use Load MP3';status.textContent='Expected: 02-the-wrong-side-of-morning.mp3 or The Wrong Side of Morning.mp3'});seek.addEventListener('input',()=>{if(audio.duration)audio.currentTime=(seek.value/1000)*audio.duration});document.getElementById('back').addEventListener('click',()=>audio.currentTime=Math.max(0,audio.currentTime-10));document.getElementById('forward').addEventListener('click',()=>audio.currentTime=Math.min(audio.duration||Infinity,audio.currentTime+10));volume.addEventListener('input',()=>audio.volume=volume.value);audio.volume=volume.value;
+file.addEventListener('change',()=>{const f=file.files&&file.files[0];if(!f)return;if(audio.dataset.objectUrl)URL.revokeObjectURL(audio.dataset.objectUrl);const url=URL.createObjectURL(f);audio.dataset.objectUrl=url;audio.src=url;filename.textContent=f.name;sourceStatus.textContent='Local MP3 loaded';audio.load()});
+document.addEventListener('keydown',e=>{if(['INPUT','SUMMARY'].includes(document.activeElement.tagName))return;if(e.code==='Space'){e.preventDefault();audio.paused?audio.play():audio.pause()}if(e.code==='ArrowLeft'){e.preventDefault();audio.currentTime=Math.max(0,audio.currentTime-10)}if(e.code==='ArrowRight'){e.preventDefault();audio.currentTime=Math.min(audio.duration||Infinity,audio.currentTime+10)}});
+</script>
+</body>
+</html>
