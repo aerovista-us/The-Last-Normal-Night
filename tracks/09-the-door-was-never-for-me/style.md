@@ -1,0 +1,5 @@
+# The Door Was Never for Me — Suno v6 Style
+
+```text
+88 BPM cinematic North Idaho SwampHop with massive controlled sub-bass,dusty half-time drums,bluesy guitar fragments,cassette grit and two subtly conflicting ambient layers representing two realities at once. Keep the rough male lead close and decisive. Older-him remains a natural aged version of the same voice through radio until the final reveal. The doorway should be conveyed with opposing room tones,phase tension and low pressure rather than sci-fi lasers. As he realizes the opening is ingress,add restrained industrial percussion and sharper low-end movement. During the third-option sequence,lock the 88 BPM pulse while duplicate sonic elements align instead of fighting. Wooden-flute growl rises only when realities approach contact. After he controls the threshold,strip everything to silence,then reveal older-him physically with a dry unprocessed voice directly behind him. End hard. No rock,EDM,country accent,pop-punk,glossy synth-pop or parody.
+```
