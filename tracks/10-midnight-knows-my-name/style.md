@@ -1,0 +1,5 @@
+# Midnight Knows My Name — Suno v6 Style
+
+```text
+88 BPM cinematic North Idaho SwampHop finale with deep physical sub-bass,dusty half-time drums,lazy bluesy electric-guitar bends,cassette character,cinematic space and a rough intimate male lead. Older-him is now physically present and must sound like the same singer aged naturally,not radio-filtered or monstrous. Begin restrained and human,then let fractured doubles and distant Frequency Three textures surface as competing memories are revealed. The central realization should simplify the arrangement rather than explode: heartbeat,clean bass pulse and a clear recurring melody. Final chorus becomes the fullest and cleanest SwampHop statement of the story—powerful,grounded and resolved without rock grandeur. During stabilization,stack lake,radio,clock and doorway textures into one controlled moment,then clear them away. End warm and quiet before the final distant 11:59/Frequency Three loop and one wooden-flute growl. No rock,country accent,pop-punk,glossy synth-pop or parody.
+```
