@@ -29,9 +29,8 @@ jobs:
           from pathlib import Path
           from PIL import Image
           root=Path('comic/issues/01-the-last-normal-night/pages')
-          need=list(range(1,25))
           failures=[]
-          for n in need:
+          for n in range(1,25):
               p=root/f'p{n:02d}.png'
               if not p.exists():
                   failures.append(f'missing {p}')
@@ -45,18 +44,41 @@ jobs:
                   failures.append(f'{p}: invalid PNG: {exc}')
           if failures:
               raise SystemExit('\n'.join(failures))
-          print('EP1 QA PASS: 24/24 PNG masters exist, decode, and are 2063x3150')
+          print('EP1 STORY QA PASS: 24/24 PNG masters exist, decode, and are 2063x3150')
           PY
-      - name: Commit complete EP1 page masters
+      - name: Build publishing matter and CBZ
+        run: python comic/issues/01-the-last-normal-night/production/generate_publishing_matter.py
+      - name: Verify complete publishing package
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          issue=Path('comic/issues/01-the-last-normal-night')
+          pages=issue/'pages'
+          for name in ['00-cover-front.png','01-inside-front.png','26-cover-back.png']:
+              p=pages/name
+              assert p.exists(), p
+              with Image.open(p) as im:
+                  assert im.size==(2063,3150), (p,im.size)
+                  im.verify()
+          cbz=issue/'EP1-The-Last-Normal-Night.cbz'
+          assert cbz.exists() and cbz.stat().st_size>0, cbz
+          print('EP1 PUBLISHING QA PASS: covers + inside front + CBZ package verified')
+          PY
+      - name: Commit complete EP1 package
         run: |
           git config user.name 'AeroVista Build Bot'
           git config user.email 'actions@users.noreply.github.com'
           git add comic/issues/01-the-last-normal-night/pages/p0[1-9].png
           git add comic/issues/01-the-last-normal-night/pages/p1[0-9].png
           git add comic/issues/01-the-last-normal-night/pages/p2[0-4].png
+          git add comic/issues/01-the-last-normal-night/pages/00-cover-front.png
+          git add comic/issues/01-the-last-normal-night/pages/01-inside-front.png
+          git add comic/issues/01-the-last-normal-night/pages/26-cover-back.png
+          git add comic/issues/01-the-last-normal-night/EP1-The-Last-Normal-Night.cbz
           if git diff --cached --quiet; then
-            echo 'No page changes to commit.'
+            echo 'No publishing changes to commit.'
           else
-            git commit -m 'Finalize EP1 24-page master sequence'
+            git commit -m 'Package complete EP1 issue'
             git push
           fi
