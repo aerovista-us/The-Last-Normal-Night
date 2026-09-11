@@ -74,6 +74,37 @@ Canonical Page 07 remains:
 
 No supernatural lighting, figures, glitches, portals, shadows, altered anatomy, or sinister grin. The wrongness is social recognition that should not exist.
 
+## Repeated imagery / source-art reuse failure
+
+**Status:** HARD REJECTION CONDITION UNLESS SCRIPTED
+
+A Rack review on 2026-09-11 showed different page files reusing recognizable source compositions and panel imagery. This creates the impression that the comic is looping even when the PNG filenames are different.
+
+This is not acceptable as incidental production reuse.
+
+### Hard rule
+
+**No story page may reuse a prior page's panel artwork, crop, background plate, or near-identical generated composition unless `script.md` explicitly calls for a repeated image as a reality-device beat.**
+
+Allowed reuse:
+- continuity objects such as the same truck, sedan, storefront, radio, doorway, or location
+- deliberately repeated panel compositions when the script/storyboard explicitly requires recurrence
+- environmental establishing angles reused only when the repetition itself is narratively intentional
+
+Rejected reuse:
+- the same protagonist pose pasted into multiple unrelated pages
+- the same storefront/interior plate reused to stand in for a new scene
+- old rejected page art cropped into later pages merely because it looks good
+- a prior page's composition regenerated with only small text or lighting changes
+- reference boards, contact sheets, or continuity boards appearing as story pages
+- repeated generated crowd/street/lake imagery that makes distinct story beats visually indistinguishable
+
+### Review requirement
+
+Before approving a page, compare it visually against at least the previous three pages and any earlier page using the same location. If a panel reads as reused rather than intentionally echoed, replace it.
+
+Scripted repetition must be documented in the page QA note so accidental duplication and intentional reality malfunction are never confused.
+
 ## New mandatory storyboard gate
 
 Before generating or approving final panel art for any remaining EP1 page:
@@ -109,5 +140,6 @@ A generated image is not a production master unless it matches:
 - vehicle continuity when present
 - real CDA plausibility
 - no premature motifs/reveals
+- no incidental reuse of prior page/panel art
 - lettering-safe negative space
 - no generated story text unless intentionally approved during final layout
