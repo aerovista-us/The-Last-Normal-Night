@@ -18,6 +18,7 @@
 - `focus-regions.json` — authored Rack Panel Focus reading map
 - `PAGE_ASSEMBLY_STANDARD.md` — authoritative controlled-assembly workflow
 - `PAGE_ART_QA.md` — acceptance/rejection log for generated page concepts
+- `ASSET_MANIFEST.md` — classification of uploaded/generated visual assets and reuse rules
 - `panel-prompts-p05-p08.md` — controlled panel prompts for the first anomaly batch
 - `layouts/` — fixed SVG production geometry for all story pages + rupture spread
 - `storyboards/` — storyboard/lettering proofs for all 24 story pages + rupture spread
@@ -134,6 +135,7 @@ Use:
 - `storyboards/p07-storyboard.svg`
 - `layouts/p07.svg`
 - `panel-prompts-p05-p08.md`
+- `ASSET_MANIFEST.md`
 - protagonist / CDA visual references
 
 Build four textless plates, place into the locked page geometry, add final lettering, QA against `script.md` and `focus-regions.json`, then export the 2063 × 3150 master.
