@@ -142,3 +142,5 @@ doorway(p,(1220,220,540,600)); doorway(p,(1250,1180,520,520),inside=False,lineon
 # P24
 p=canvas(); panel(p,(41,63,1980,3024),2); phone(p,(1190,1770,590,850),'FULL','WELCOME HOME'); bubble(p,(650,1900),'Figures.'); boxtext(p,(90,2860),'END ISSUE #1',font=f46,maxw=500,fill=WHITE); save(p,24)
 print('Generated:', ', '.join(str(OUT/f'p{n:02d}.png') for n in [1,2,3,4,5,6,7,8,19,20,21,22,23,24]))
+
+# build-trigger: 2026-09-11
