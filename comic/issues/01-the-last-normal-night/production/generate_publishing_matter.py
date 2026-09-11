@@ -1,11 +1,13 @@
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageOps
+from io import BytesIO
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[4]
 ISSUE = ROOT / 'comic/issues/01-the-last-normal-night'
 PAGES = ISSUE / 'pages'
 W,H = 2063,3150
+MAX_ARCHIVE = 95 * 1024 * 1024
 
 FONT='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 BOLD='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
@@ -69,18 +71,36 @@ text(d,(W//2,H-390),'WELCOME HOME',sub,anchor='mm')
 text(d,(W//2,H-275),'EchoStory · AeroVista',body,anchor='mm',fill=(180,188,198))
 back.save(PAGES/'26-cover-back.png',optimize=True)
 
-# Package the complete issue in publishing order.
+# Package reader-quality JPEGs inside CBZ while retaining full-resolution PNG masters in the repo.
 archive=ISSUE/'EP1-The-Last-Normal-Night.cbz'
 ordered=[PAGES/'00-cover-front.png',PAGES/'01-inside-front.png']
 ordered += [PAGES/f'p{n:02d}.png' for n in range(1,25)]
 ordered += [PAGES/'26-cover-back.png']
 for p in ordered:
     if not p.exists(): raise SystemExit(f'missing publishing asset: {p}')
-with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as z:
-    for idx,p in enumerate(ordered):
-        if p.name.startswith('p'):
-            n=int(p.stem[1:]); arc=f'{n+1:02d}-p{n:02d}.png'
-        else:
-            arc=p.name
-        z.write(p,arc)
+
+def build_cbz(quality):
+    if archive.exists(): archive.unlink()
+    with zipfile.ZipFile(archive,'w',compression=zipfile.ZIP_STORED) as z:
+        for idx,p in enumerate(ordered):
+            with Image.open(p) as im:
+                im=im.convert('RGB')
+                buf=BytesIO()
+                im.save(buf,format='JPEG',quality=quality,optimize=True,progressive=True,subsampling=1)
+                if p.name.startswith('p'):
+                    n=int(p.stem[1:]); arc=f'{n+1:02d}-p{n:02d}.jpg'
+                elif p.name=='00-cover-front.png': arc='00-cover-front.jpg'
+                elif p.name=='01-inside-front.png': arc='01-inside-front.jpg'
+                else: arc='26-cover-back.jpg'
+                z.writestr(arc,buf.getvalue())
+    return archive.stat().st_size
+
+for quality in (90,86,82,78):
+    size=build_cbz(quality)
+    print(f'CBZ quality {quality}: {size/1024/1024:.2f} MB')
+    if size <= MAX_ARCHIVE:
+        break
+else:
+    raise SystemExit(f'CBZ remains too large: {size/1024/1024:.2f} MB')
+
 print('publishing assets generated:', PAGES/'00-cover-front.png', PAGES/'01-inside-front.png', PAGES/'26-cover-back.png', archive)
