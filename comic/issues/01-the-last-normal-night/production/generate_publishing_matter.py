@@ -12,7 +12,7 @@ MAX_ARCHIVE = 95 * 1024 * 1024
 FONT='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'
 BOLD='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 try:
-    title=ImageFont.truetype(BOLD,122); sub=ImageFont.truetype(BOLD,54); body=ImageFont.truetype(FONT,38); small=ImageFont.truetype(FONT,30)
+    title=ImageFont.truetype(BOLD,118); sub=ImageFont.truetype(BOLD,50); body=ImageFont.truetype(FONT,38); small=ImageFont.truetype(FONT,30)
 except Exception:
     title=sub=body=small=ImageFont.load_default()
 
@@ -25,17 +25,23 @@ def shade(im,amount=.35):
 def text(draw,xy,s,font,fill=(245,245,240),anchor=None):
     draw.text(xy,s,font=font,fill=fill,anchor=anchor)
 
-# Front cover from Track 1 visual language.
-cover_src = ROOT/'tracks/01-the-last-normal-night/01-the-last-normal-night.png'
-front=shade(fit(cover_src),.18)
+# Front cover: use clean CDA noir environment art rather than Track 1 album art.
+# The album art contains baked title text, which caused the duplicate/ghost title
+# visible on The Rack thumbnail. Keep comic typography authored here only.
+cover_src = ISSUE/'2026-09-10__20-58-21__Rainy-Noir-in-Downtown-Coeur-dAlene__file_00000000706481fdb43883c8c8ec1289.png'
+front=shade(fit(cover_src),.16)
 d=ImageDraw.Draw(front)
-d.rectangle((0,0,W,600),fill=(8,10,14,205))
-text(d,(103,105),'ECHOSTORY',sub)
-text(d,(103,200),'THE LAST',title)
-text(d,(103,335),'NORMAL NIGHT',title)
-text(d,(103,505),'ISSUE 1 · THE CROSSING',sub,fill=(210,218,225))
-d.rectangle((0,H-220,W,H),fill=(8,10,14))
-text(d,(103,H-158),'A North Idaho reality-fracture story',body,fill=(205,210,215))
+# Strong, clean title field that remains readable at Rack-thumbnail size.
+d.rectangle((0,0,W,760),fill=(7,9,12))
+d.line((95,760,W-95,760),fill=(57,67,78),width=3)
+text(d,(103,92),'ECHOSTORY',sub,fill=(190,202,212))
+text(d,(103,195),'THE LAST',title)
+text(d,(103,332),'NORMAL NIGHT',title)
+text(d,(103,545),'ISSUE 1 · THE CROSSING',sub,fill=(214,221,228))
+text(d,(103,628),'A NORTH IDAHO REALITY-FRACTURE STORY',small,fill=(146,158,170))
+# Minimal footer mark; leave the image itself dominant.
+d.rectangle((0,H-150,W,H),fill=(7,9,12))
+text(d,(103,H-103),'VESPERA PUBLISHING · ECHOSTORY',small,fill=(154,165,176))
 front.save(PAGES/'00-cover-front.png',optimize=True)
 
 # Inside-front publishing matter.
