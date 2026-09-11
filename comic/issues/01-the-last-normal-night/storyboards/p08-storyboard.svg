@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2063" height="3150" viewBox="0 0 2063 3150">
+  <rect width="2063" height="3150" fill="#0b0d10"/>
+  <style>
+    .panel{fill:#c7c7c7;stroke:#f4f4f4;stroke-width:8}.ink{stroke:#1b1b1b;stroke-width:18;fill:none;stroke-linecap:round;stroke-linejoin:round}.thin{stroke:#333;stroke-width:10;fill:none}.label{font:700 34px Arial,sans-serif;fill:#fff}.note{font:28px Arial,sans-serif;fill:#d8d8d8}.balloon{fill:#fff;stroke:#111;stroke-width:8}.dialog{font:700 34px Arial,sans-serif;fill:#111}.phone{fill:#202020;stroke:#111;stroke-width:12}.screen{fill:#10151a;stroke:#777;stroke-width:6}.screenText{font:700 44px Arial,sans-serif;fill:#fff}.notification{fill:#e8e8e8;stroke:#111;stroke-width:6}
+  </style>
+  <text x="83" y="78" class="label">EP1 PAGE 08 — STORYBOARD + LETTERING PROOF — 2063 × 3150</text>
+
+  <!-- Panel 1 -->
+  <rect class="panel" x="83" y="126" width="1897" height="693"/>
+  <text x="110" y="180" class="label">P08.1 — EMPTY SHERMAN / LAMPS ON, NO PEOPLE, NO CARS</text>
+  <path d="M140 700 L720 300 L1340 300 L1910 700" fill="#9a9a9a" stroke="#333" stroke-width="10"/>
+  <line x1="1020" y1="300" x2="1020" y2="760" class="thin"/>
+  <g stroke="#333" stroke-width="12"><line x1="280" y1="390" x2="280" y2="650"/><circle cx="280" cy="360" r="28" fill="#ddd"/><line x1="520" y1="355" x2="520" y2="650"/><circle cx="520" cy="325" r="28" fill="#ddd"/><line x1="1520" y1="355" x2="1520" y2="650"/><circle cx="1520" cy="325" r="28" fill="#ddd"/><line x1="1760" y1="390" x2="1760" y2="650"/><circle cx="1760" cy="360" r="28" fill="#ddd"/></g>
+  <text x="120" y="770" class="note">Recognizable Sherman scale. The wrongness is absence only. No silhouettes, no insects, no moving traffic.</text>
+
+  <!-- Panel 2 -->
+  <rect class="panel" x="83" y="945" width="1897" height="693"/>
+  <text x="110" y="1005" class="label">P08.2 — LAKE UNNATURALLY FLAT / REAL SHORELINE RELATIONSHIP</text>
+  <rect x="130" y="1130" width="1800" height="400" fill="#8e969c" stroke="#333" stroke-width="10"/>
+  <line x1="130" y1="1320" x2="1930" y2="1320" stroke="#666" stroke-width="4"/>
+  <path d="M130 1240 Q300 1130 500 1190 Q720 1080 940 1195 Q1190 1090 1410 1185 Q1650 1110 1930 1210" fill="#686868" stroke="#333" stroke-width="8"/>
+  <text x="120" y="1590" class="note">No glow, no portal, no altered shoreline. Water should read almost painted-flat.</text>
+
+  <!-- Panel 3 -->
+  <rect class="panel" x="83" y="1764" width="908" height="1260"/>
+  <text x="110" y="1825" class="label">P08.3 — PHONE: NO SERVICE</text>
+  <rect class="phone" x="300" y="1960" rx="80" ry="80" width="480" height="820"/>
+  <rect class="screen" x="340" y="2050" rx="40" ry="40" width="400" height="640"/>
+  <text x="455" y="2360" class="screenText">NO</text><text x="400" y="2425" class="screenText">SERVICE</text>
+  <text x="125" y="2950" class="note">Over-shoulder phone close-up. Keep protagonist partly in frame for continuity.</text>
+
+  <!-- Panel 4 -->
+  <rect class="panel" x="1073" y="1764" width="908" height="1260"/>
+  <text x="1100" y="1825" class="label">P08.4 — WELCOME BACK FLASH</text>
+  <rect class="phone" x="1290" y="1960" rx="80" ry="80" width="480" height="820"/>
+  <rect class="screen" x="1330" y="2050" rx="40" ry="40" width="400" height="640"/>
+  <rect class="notification" x="1360" y="2220" rx="28" ry="28" width="340" height="180"/>
+  <text x="1410" y="2300" class="dialog">WELCOME</text><text x="1445" y="2355" class="dialog">BACK</text>
+  <rect class="balloon" x="1140" y="2700" rx="50" ry="50" width="690" height="150"/>
+  <text x="1190" y="2795" class="dialog">What the fuck was that?</text>
+  <text x="1100" y="2950" class="note">No sender. No app icon. Notification disappears immediately after this beat.</text>
+</svg>
