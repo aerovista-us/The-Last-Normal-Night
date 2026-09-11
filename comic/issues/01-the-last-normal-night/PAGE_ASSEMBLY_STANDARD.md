@@ -18,11 +18,30 @@ Final page master:
 1. Use `script.md` for story, action, dialogue, SFX and panel count.
 2. Use `focus-regions.json` as the starting geometry for panel rectangles and Rack mobile focus order.
 3. Use `layouts/*.svg` as fixed page templates.
-4. Generate or source each panel independently when full-page generation cannot preserve the scripted layout.
-5. Place each approved panel into the fixed SVG/page geometry.
-6. Add all lettering, UI, clocks, phone messages, captions and signage during layout — not in generated art.
-7. Export the flattened page master at 2063 × 3150.
-8. Recheck Rack focus regions against the final faces, balloons and action before publication.
+4. **Build a storyboard + lettering proof at 2063 × 3150 before final art generation.** The proof must show every panel's subject/action plus temporary balloons, captions, UI and SFX positions.
+5. Verify the storyboard against the script, reveal order, page geometry and Rack focus order.
+6. Only after the storyboard passes, generate or source each panel independently when full-page generation cannot preserve the scripted layout.
+7. Place each approved textless panel into the fixed SVG/page geometry.
+8. Add all final lettering, UI, clocks, phone messages, captions and signage during layout — not in generated art.
+9. Export the flattened page master at 2063 × 3150.
+10. Recheck Rack focus regions against the final faces, balloons and action before publication.
+
+## Storyboard gate
+
+Storyboard proofs are mandatory production artifacts, but they are not publishable comic pages.
+
+A storyboard proof must establish:
+
+- exact scripted panel count
+- reading order
+- primary subject/action in each panel
+- balloon/caption/SFX placement
+- negative space for lettering
+- whether a panel is wide, close, repeated-angle or continuity-matched
+- any story-critical UI such as clocks, phone screens or notification boxes
+- compatibility with authored `focusRegions`
+
+If the storyboard does not work, fix the layout before generating art.
 
 ## Visual continuity priority
 
@@ -44,6 +63,8 @@ If generated art conflicts with real CDA geography, the real reference wins.
 - generated story text replacing final lettering
 - white sedan highlighted as overtly supernatural before the script calls for it
 - portal/fantasy effects before the midnight rupture
+- invented characters, notes or horror beats not present in `script.md`
+- driving scenes substituted for scripted walking scenes
 
 ## Page batch strategy
 
@@ -66,6 +87,7 @@ Altered-CDA aftermath, Frequency Three intrusion, doorway choice and WELCOME HOM
 
 A page is not production-final merely because the art looks good. It must pass all of the following:
 
+- storyboard proof approved
 - correct panel count and order
 - correct story beat
 - consistent protagonist
