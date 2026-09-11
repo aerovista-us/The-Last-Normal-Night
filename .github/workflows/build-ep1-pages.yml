@@ -19,21 +19,31 @@ jobs:
           python-version: '3.12'
       - name: Install renderer
         run: python -m pip install --disable-pip-version-check pillow
-      - name: Build missing canonical pages
+      - name: Build canonical missing/rebuilt pages
         run: python comic/issues/01-the-last-normal-night/production/generate_missing_pages.py
-      - name: Verify PNG masters
+      - name: Verify complete EP1 PNG master sequence
         run: |
           python - <<'PY'
           from pathlib import Path
           from PIL import Image
           root=Path('comic/issues/01-the-last-normal-night/pages')
-          need=list(range(1,9))+list(range(19,25))
+          need=list(range(1,25))
+          failures=[]
           for n in need:
               p=root/f'p{n:02d}.png'
-              assert p.exists(), p
-              with Image.open(p) as im:
-                  assert im.size==(2063,3150), (p, im.size)
-          print('verified', len(need), 'generated page masters')
+              if not p.exists():
+                  failures.append(f'missing {p}')
+                  continue
+              try:
+                  with Image.open(p) as im:
+                      if im.size != (2063,3150):
+                          failures.append(f'{p}: {im.size}, expected 2063x3150')
+                      im.verify()
+              except Exception as exc:
+                  failures.append(f'{p}: invalid PNG: {exc}')
+          if failures:
+              raise SystemExit('\n'.join(failures))
+          print('EP1 QA PASS: 24/24 PNG masters exist, decode, and are 2063x3150')
           PY
       - name: Commit generated page masters
         run: |
