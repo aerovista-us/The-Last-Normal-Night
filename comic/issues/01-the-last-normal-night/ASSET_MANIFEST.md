@@ -7,6 +7,8 @@ The purpose is to prevent rejected concept art from quietly becoming canon and t
 ## Status labels
 
 - **LOCKED REFERENCE** — approved continuity/reference source. May guide final art directly, subject to written canon rules.
+- **WORKING PAGE** — current assembled/generated page candidate in `pages/`; useful for sequence review but not automatically production-final.
+- **CANDIDATE** — page candidate awaiting full QA/approval.
 - **USEFUL CONCEPT** — good for mood, lighting, framing, texture, palette, or isolated details, but not authoritative for story or geography.
 - **REJECTED STORY ART** — may be retained for lessons/style only; must not be used as a final comic page or as story canon.
 - **UNCLASSIFIED** — uploaded asset whose exact intended production role is not sufficiently documented yet.
@@ -20,9 +22,60 @@ The purpose is to prevent rejected concept art from quietly becoming canon and t
 5. approved character / truck / sedan / doorway references
 6. real-world user-supplied CDA photo/map references
 7. generated mood/reference boards
-8. rejected page concepts
+8. working page candidates
+9. rejected page concepts
 
 If any image conflicts with written canon or real CDA geography, the written canon / real reference wins.
+
+---
+
+## Page-file naming convention
+
+All EP1 page-art PNGs now live in `pages/`.
+
+- `pXX.png` — current working page for that story page; still requires `PAGE_ART_QA.md` approval before publication.
+- `pXX-candidate.png` — candidate page awaiting approval.
+- `pXX-legacy-concept.png` — earlier page concept retained for reference only.
+- `pXX-rejected-concept.png` — explicitly rejected story art; never publish as canon.
+- `pXX-concept-a.png`, `pXX-concept-b.png`, etc. — exploratory concepts retained for visual reference.
+
+Reference boards, CDA geography references, track artwork and mood images remain outside `pages/` because they are not comic-page masters.
+
+---
+
+## Current working page sequence
+
+The September 11 generation batch has been normalized to:
+
+- `pages/p09.png`
+- `pages/p10.png`
+- `pages/p11.png`
+- `pages/p12.png`
+- `pages/p13.png`
+- `pages/p14.png`
+- `pages/p15.png`
+- `pages/p16.png`
+- `pages/p17.png`
+- `pages/p18.png`
+
+**Status:** WORKING PAGE / QA REQUIRED  
+**Rule:** These files are the current visual sequence for review, but their clean filename does not itself make them production-final. Every page still has to pass the locked script, panel count, reveal order, continuity, CDA geography, lettering, print geometry and Rack-focus checks.
+
+Pages 14–15 must ultimately satisfy the canonical single-composition rupture-spread requirement, including the 4050 × 3150 spread master.
+
+---
+
+## Current Page 07–08 gate
+
+### `pages/p07-candidate.png`
+**Status:** CANDIDATE / QA REQUIRED  
+**Role:** newer Page 07 candidate.  
+**Must match:** four-panel convenience-store recognition sequence in `storyboards/p07-storyboard.svg` and `layouts/p07.svg`.
+
+### `pages/p08-candidate.png`
+**Status:** CANDIDATE / QA REQUIRED  
+**Role:** Page 08 candidate.  
+**Must match:** empty Sherman → unnaturally flat lake → NO SERVICE → transient WELCOME BACK sequence in `storyboards/p08-storyboard.svg` and `layouts/p08.svg`.
 
 ---
 
@@ -108,41 +161,54 @@ If any image conflicts with written canon or real CDA geography, the written can
 
 ---
 
-## Page-art concepts already rejected as finals
+## Retained page concepts
 
-### `ChatGPT Image Sep 11, 2026, 12_18_59 AM.png`
-**Status:** REJECTED STORY ART / STYLE REFERENCE ONLY  
-**Note:** same blob as `ep1.5.24.png`.
-
-### `ep1.5.24.png`
-**Status:** REJECTED STORY ART / PAGE 05 CONCEPT  
-**Useful:** palette, protagonist facial direction, anomaly rhythm.  
-**Rejected because:** protagonist drives instead of walks; lettering baked into art; visible figure appears where script requires an empty sidewalk; invented location detail.
-
-### `ep1.6.34.png`
-**Status:** REJECTED STORY ART / PAGE 06 CONCEPT  
-**Useful:** lighting mood.  
-**Rejected because:** seven panels instead of five; driving instead of walking Sherman; premature `11:59`; invented hooded figure; wrong route; missing `11:58 → 11:57`; generated text baked in.
-
-### `ep1.7.24.png`
-**Status:** REJECTED STORY ART / PAGE 07 CONCEPT  
-**Useful:** noir palette, sedan rendering quality, protagonist facial direction.  
-**Rejected because:** seven panels instead of four; convenience-store scene omitted; invented note subplot; invented hooded woman; wrong character action; generated text baked in.
-
-### `ep1.1.24.png`
+### `pages/p01-concept-a.png`
 **Status:** USEFUL CONCEPT / NOT FINAL  
 **Role:** early opening-page concept.  
 **Rule:** final Page 01 must follow `storyboards/p01-storyboard.svg` and `layouts/p01.svg`.
 
-### `ep1.1.24 (2).png`
+### `pages/p01-concept-b.png`
 **Status:** USEFUL CONCEPT / NOT FINAL  
 **Role:** alternate opening-page concept.  
 **Rule:** same as above.
 
-### `ep1.3page spread.png`
+### `pages/p03-spread-concept.png`
 **Status:** USEFUL CONCEPT / NOT FINAL  
 **Role:** early multi-panel/spread exploration.  
 **Rule:** must not override the locked page-by-page layout or the canonical Pages 14–15 rupture spread.
+
+### `pages/p09-legacy-concept.png`
+**Status:** LEGACY CONCEPT / NOT FINAL
+
+### `pages/p10-legacy-concept.png`
+**Status:** LEGACY CONCEPT / NOT FINAL
+
+### `pages/p11-legacy-concept.png`
+**Status:** LEGACY CONCEPT / NOT FINAL  
+**Note:** restored from the original valid historical blob after a prior move produced a corrupt 2-byte file.
+
+### `pages/p13-legacy-concept.png`
+**Status:** LEGACY CONCEPT / NOT FINAL
+
+---
+
+## Page-art concepts rejected as finals
+
+### `pages/p05-rejected-concept.png`
+**Status:** REJECTED STORY ART / PAGE 05 CONCEPT  
+**Useful:** palette, protagonist facial direction, anomaly rhythm.  
+**Rejected because:** protagonist drives instead of walks; lettering baked into art; visible figure appears where script requires an empty sidewalk; invented location detail.
+
+### `pages/p06-rejected-concept.png`
+**Status:** REJECTED STORY ART / PAGE 06 CONCEPT  
+**Useful:** lighting mood.  
+**Rejected because:** seven panels instead of five; driving instead of walking Sherman; premature `11:59`; invented hooded figure; wrong route; missing `11:58 → 11:57`; generated text baked in.
+
+### `pages/p07-rejected-concept.png`
+**Status:** REJECTED STORY ART / PAGE 07 CONCEPT  
+**Useful:** noir palette, sedan rendering quality, protagonist facial direction.  
+**Rejected because:** seven panels instead of four; convenience-store scene omitted; invented note subplot; invented hooded woman; wrong character action; generated text baked in.
 
 ---
 
@@ -154,45 +220,30 @@ Do not promote an unclassified image into a final page simply because it looks p
 
 ---
 
-## Duplicate-file notes
+## Duplicate-file cleanup
 
-The repository currently contains some duplicate binaries at more than one path/name. This is harmless for production but should eventually be cleaned up.
+The duplicate page-art binaries previously scattered at repository root and the issue root have been removed from those duplicate locations. Page-art copies now live under `pages/` with role-explicit names.
 
-Known duplicate example:
-
-- `ChatGPT Image Sep 11, 2026, 12_18_59 AM.png`
-- `ep1.5.24.png`
-
-Both use blob SHA `f1f4fceac70bf99433c7077a1f933f0b2038db21`.
-
-There are also selected EP1 images duplicated at repository root and inside the issue directory. Do not treat duplicate location as separate approval.
+Reference and mood images intentionally remain outside `pages/`.
 
 ---
 
 ## Final-art rule
 
-No current uploaded PNG is automatically a publishable EP1 page.
+A clean filename is not an approval state. No current uploaded PNG is automatically a publishable EP1 page.
 
 A final page master must:
 
 1. match the locked storyboard and panel count
-2. use textless approved art plates
-3. preserve protagonist / vehicle / doorway continuity
-4. preserve real CDA geography where applicable
-5. contain final lettering added during layout
-6. pass `PAGE_ART_QA.md`
-7. export at **2063 × 3150 px** (or **4050 × 3150 px** for the Pages 14–15 spread master)
-8. remain compatible with `focus-regions.json`
+2. preserve the exact scripted action and reveal order
+3. use approved art / controlled assembly as required
+4. preserve protagonist / vehicle / doorway continuity
+5. preserve real CDA geography where applicable
+6. contain clean final lettering added during layout where required
+7. pass `PAGE_ART_QA.md`
+8. export at **2063 × 3150 px** (or **4050 × 3150 px** for the Pages 14–15 spread master)
+9. remain compatible with `focus-regions.json`
 
-## Current art-production target
+## Current production target
 
-**Page 07** remains the visual-pipeline benchmark.
-
-Required plates:
-
-- `P07.1` — mundane late-night convenience-store establishing shot; protagonist buying water/gum
-- `P07.2` — young clerk recognizes protagonist immediately
-- `P07.3` — protagonist pauses / confused reaction
-- `P07.4` — ordinary two-shot; clerk appears almost relieved, not sinister
-
-No supernatural effects, hooded figures, notes, sedan subplot, portal, glitching, or generated dialogue inside the art plates.
+QA Pages 07–08 candidates, then review the normalized working sequence `p09.png` through `p18.png` against the script, storyboards, layouts, continuity rules, print geometry and Rack focus regions before promoting any page to production-final.
