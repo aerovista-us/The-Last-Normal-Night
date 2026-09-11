@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2063" height="3150" viewBox="0 0 2063 3150">
+  <rect width="2063" height="3150" fill="#111"/>
+  <g fill="#2a2a2a" stroke="#f2f2f2" stroke-width="8">
+    <rect x="83" y="126" width="1897" height="630"/>
+    <rect x="83" y="882" width="908" height="756"/>
+    <rect x="1073" y="882" width="908" height="756"/>
+    <rect x="83" y="1764" width="908" height="1260"/>
+    <rect x="1073" y="1764" width="908" height="1260"/>
+  </g>
+  <g fill="#fff" font-family="Arial, sans-serif" font-size="42">
+    <text x="110" y="185">P06.1 SHERMAN FEELS STRETCHED</text>
+    <text x="110" y="941">P06.2 WHITE SEDAN PASSES</text>
+    <text x="1100" y="941">P06.3 SAME SEDAN REPEATS</text>
+    <text x="110" y="1823">P06.4 DIGITAL SIGN 11:58</text>
+    <text x="1100" y="1823">P06.5 DIGITAL SIGN 11:57</text>
+  </g>
+</svg>
