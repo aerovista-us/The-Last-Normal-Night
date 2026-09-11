@@ -48,6 +48,45 @@ Canonical Page 06 remains:
 
 **Hard rule:** Do not use `11:59` anywhere on Page 06.
 
+## Page 07 — concept pass
+
+**Status:** REJECTED AS FINAL / DO NOT USE FOR STORY CONTENT
+
+Useful:
+- noir palette
+- white-sedan rendering quality
+- protagonist facial direction
+
+Rejected because:
+- seven panels generated instead of the scripted four
+- convenience-store scene was omitted entirely
+- invented note subplot (`Don’t go home`) that belongs nowhere on Page 07
+- invented hooded-woman character and surveillance beat
+- protagonist returned to truck/driving behavior instead of entering the store
+- generated lettering is baked into art
+- page duplicates/expands motifs already used on earlier pages instead of advancing to human recognition
+
+Canonical Page 07 remains:
+1. late-night convenience store establishing shot; protagonist buys water/gum
+2. young clerk recognizes him immediately: `You picked a good one.`
+3. protagonist pauses: `Good what?`
+4. clerk gives a normal, almost relieved smile: `Have a good night.`
+
+No supernatural lighting, figures, glitches, portals, shadows, altered anatomy, or sinister grin. The wrongness is social recognition that should not exist.
+
+## New mandatory storyboard gate
+
+Before generating or approving final panel art for any remaining EP1 page:
+
+1. Build a page-size storyboard/lettering proof at **2063 × 3150**.
+2. Match the scripted panel count and reading order exactly.
+3. Place temporary dialogue/captions/SFX to prove balloon and caption space.
+4. Confirm the page still works with its authored Rack focus regions.
+5. Only then generate/source art for each locked panel rectangle.
+6. Final art remains textless until layout/lettering.
+
+Storyboard proofs are layout artifacts, not publishable final art. Their job is to stop story drift before generation.
+
 ## Current production target — Page 07
 
 Page 07 is the first human-recognition anomaly and should remain visually mundane.
