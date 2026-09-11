@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2063" height="3150" viewBox="0 0 2063 3150">
+  <rect width="2063" height="3150" fill="#111"/>
+  <g fill="#2a2a2a" stroke="#f2f2f2" stroke-width="8">
+    <rect x="83" y="126" width="1897" height="725"/>
+    <rect x="83" y="977" width="1897" height="630"/>
+    <rect x="83" y="1733" width="1897" height="630"/>
+    <rect x="83" y="2489" width="1897" height="535"/>
+  </g>
+  <g fill="#fff" font-family="Arial, sans-serif" font-size="42">
+    <text x="110" y="185">P05.1 STREETLIGHT AHEAD</text>
+    <text x="110" y="1036">P05.2 LIGHT SHUTS OFF</text>
+    <text x="110" y="1792">P05.3 LIGHT RETURNS / PHONE SIGNAL</text>
+    <text x="110" y="2548">P05.4 EMPTY SIDEWALK / WHISPER</text>
+  </g>
+</svg>
