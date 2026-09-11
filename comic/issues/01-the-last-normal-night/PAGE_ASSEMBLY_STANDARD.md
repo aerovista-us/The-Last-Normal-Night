@@ -25,6 +25,7 @@ Final page master:
 8. Add all final lettering, UI, clocks, phone messages, captions and signage during layout — not in generated art.
 9. Export the flattened page master at 2063 × 3150.
 10. Recheck Rack focus regions against the final faces, balloons and action before publication.
+11. Compare the completed page against at least the previous three story pages for accidental repeated source art or near-identical compositions.
 
 ## Storyboard gate
 
@@ -53,6 +54,24 @@ If the storyboard does not work, fix the layout before generating art.
 
 If generated art conflicts with real CDA geography, the real reference wins.
 
+## Reuse rule
+
+Continuity is not the same thing as repeating artwork.
+
+The same protagonist, truck, sedan, doorway and real CDA locations should remain recognizable, but each new story beat normally requires a new panel composition or new plate.
+
+**Do not reuse prior page/panel artwork simply because it already contains the correct character or location.**
+
+Repetition is allowed only when `script.md` or the locked storyboard deliberately calls for a repeated panel/composition as part of the reality-fracture language. When intentional, record that decision in `PAGE_ART_QA.md`.
+
+Never publish:
+
+- reference boards as story pages
+- contact sheets as story pages
+- crops from rejected page concepts as substitutes for new panels
+- the same generated composition across multiple unrelated pages with only text changed
+- near-identical repeated protagonist poses or location plates that make separate beats look like the reader is looping
+
 ## Forbidden drift in final masters
 
 - wrong panel count
@@ -65,6 +84,7 @@ If generated art conflicts with real CDA geography, the real reference wins.
 - portal/fantasy effects before the midnight rupture
 - invented characters, notes or horror beats not present in `script.md`
 - driving scenes substituted for scripted walking scenes
+- incidental repeated source imagery from prior pages
 
 ## Page batch strategy
 
@@ -95,6 +115,7 @@ A page is not production-final merely because the art looks good. It must pass a
 - CDA geography plausible under the location lock
 - lettering-safe space available
 - no premature reveal
+- no accidental reuse of previous page/panel art
 - Rack focus order still works
 
 Only then should the page be moved into the final `pages/` publishing set.
