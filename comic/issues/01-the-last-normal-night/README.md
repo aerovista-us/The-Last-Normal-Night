@@ -2,7 +2,7 @@
 
 ## Production status
 
-**Stage:** Script + art-prompt package complete; visual reference lock approved; first page-art concepts generated; production page generation underway.
+**Stage:** Script + art-prompt package complete; visual reference lock approved; controlled page-art production underway.
 
 **Story pages:** 24  
 **Print trim:** 6.625 × 10.25 in  
@@ -15,6 +15,9 @@
 - `script.md` — full page-by-page and panel-by-panel production script
 - `art-prompts.md` — cover, inside-front, 24 story-page, back-cover, and optional motion prompts
 - `focus-regions.json` — authored Rack Panel Focus reading map
+- `PAGE_ASSEMBLY_STANDARD.md` — authoritative controlled-assembly workflow
+- `PAGE_ART_QA.md` — acceptance/rejection log for generated page concepts
+- `panel-prompts-p05-p08.md` — controlled panel prompts for the current anomaly batch
 - `../../reference/CDA_LOCATION_LOCK.md` — geographic continuity rules for real vs fractured Coeur d'Alene
 
 ## Visual reference lock
@@ -39,25 +42,33 @@ Wrongness comes first from controlled contradictions inside the real place, not 
 
 ## Page-art QA status
 
-Early generated page concepts for the opening sequence are **exploratory only**, not final page masters.
+Early generated page concepts are **exploratory only unless explicitly approved in `PAGE_ART_QA.md`**.
 
-They successfully established:
+Useful visual discoveries so far:
 
 - protagonist appearance
 - dark wet-street palette
-- bar / street / truck mood
-- recurring white-sedan presence
 - practical North Idaho atmosphere
+- strong noir lighting direction
+- recurring white-sedan visual language
 
-They also exposed several issues that must not enter final masters:
+Known generation failures that must not enter final masters:
 
-- inconsistent scripted panel counts/layouts
-- invented or altered storefront details
-- noncanonical `11:59` license-plate treatment
-- location geometry drifting away from real CDA
-- occasional blending of multiple page beats into one generated page
+- wrong scripted panel counts/layouts
+- protagonist driving when script says walking
+- invented figures or horror beats
+- noncanonical `11:59` license plates
+- altered CDA geography
+- generated story text baked into artwork
+- multiple scripted pages blended together
 
-Final pages must follow `script.md`, `art-prompts.md`, `focus-regions.json`, and `CDA_LOCATION_LOCK.md` page-by-page.
+### Current QA state
+
+- Pages 1–4: concept/reference only; still require canonical rebuild/assembly
+- Page 5: concept pass rejected as final; retains useful palette/layout mood
+- Page 6: concept pass rejected as final; wrong 7-panel/driving/hooded-figure sequence
+- **Page 7: current controlled production target**
+- Page 8: follows once Page 7 visual discipline is proven
 
 ## Planned asset folders
 
@@ -96,14 +107,14 @@ Issue 2 begins from that exact state.
 
 ## Current production gate
 
-Proceed sequentially through final page generation.
+Proceed sequentially through controlled final-page production.
 
-Recommended validation batch:
+Recommended sequence:
 
-- Pages 1–4: establish visual and layout consistency
-- Pages 5–8: first anomaly escalation
+- Page 7: first human-recognition anomaly — current target
+- Page 8: WELCOME BACK flash
 - Pages 9–13: 11:59 convergence / proximity build
 - Pages 14–15: midnight rupture spread
 - Pages 16–24: altered-CDA aftermath, Frequency Three intrusion, doorway decision and WELCOME HOME handoff
 
-For each batch, verify character continuity, truck continuity, CDA geography, scripted panel count, lettering-safe space and Rack focus-region compatibility before moving on.
+For each page, verify character continuity, truck/white-sedan continuity where present, CDA geography, scripted panel count, reveal order, lettering-safe space and Rack focus-region compatibility before approval.
