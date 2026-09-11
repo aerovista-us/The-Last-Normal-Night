@@ -2,7 +2,7 @@
 
 ## Production status
 
-**Stage:** Script + art-prompt package complete; visual reference lock approved; controlled page-art production underway.
+**Stage:** Script + art-prompt package complete; visual reference lock approved; controlled storyboard/lettering proof complete through the midnight rupture; final panel-art assembly is next.
 
 **Story pages:** 24  
 **Print trim:** 6.625 × 10.25 in  
@@ -17,12 +17,13 @@
 - `focus-regions.json` — authored Rack Panel Focus reading map
 - `PAGE_ASSEMBLY_STANDARD.md` — authoritative controlled-assembly workflow
 - `PAGE_ART_QA.md` — acceptance/rejection log for generated page concepts
-- `panel-prompts-p05-p08.md` — controlled panel prompts for the current anomaly batch
+- `panel-prompts-p05-p08.md` — controlled panel prompts for the first anomaly batch
+- `storyboards/README.md` — storyboard/lettering proof index and next production target
 - `../../reference/CDA_LOCATION_LOCK.md` — geographic continuity rules for real vs fractured Coeur d'Alene
 
 ## Visual reference lock
 
-Approved working references now exist for:
+Approved working references exist for:
 
 1. protagonist
 2. truck exterior/interior
@@ -56,7 +57,7 @@ Known generation failures that must not enter final masters:
 
 - wrong scripted panel counts/layouts
 - protagonist driving when script says walking
-- invented figures or horror beats
+- invented figures, notes or horror beats
 - noncanonical `11:59` license plates
 - altered CDA geography
 - generated story text baked into artwork
@@ -67,8 +68,23 @@ Known generation failures that must not enter final masters:
 - Pages 1–4: concept/reference only; still require canonical rebuild/assembly
 - Page 5: concept pass rejected as final; retains useful palette/layout mood
 - Page 6: concept pass rejected as final; wrong 7-panel/driving/hooded-figure sequence
-- **Page 7: current controlled production target**
-- Page 8: follows once Page 7 visual discipline is proven
+- Page 7: concept pass rejected as final; invented sedan/note/hooded-woman subplot
+- Pages 7–13: **fixed layouts + storyboard/lettering proofs complete**
+- Pages 14–15: **4050 × 3150 rupture spread layout + storyboard complete**
+- Page 16 onward: scripted and prompted; storyboard pass still pending
+
+## Controlled storyboard gate
+
+Every remaining page must now pass a 2063 × 3150 storyboard/lettering proof before final panel art is generated or sourced. The proof locks:
+
+- panel count
+- action/read order
+- temporary dialogue/caption/UI placement
+- negative space
+- Rack focus compatibility
+- reveal order
+
+Final panel art is generated/sourced textless and placed into the locked page geometry. Final lettering happens during assembly.
 
 ## Planned asset folders
 
@@ -107,14 +123,15 @@ Issue 2 begins from that exact state.
 
 ## Current production gate
 
-Proceed sequentially through controlled final-page production.
+**Next:** build Page 07 from four textless panel plates using `storyboards/p07-storyboard.svg` + `layouts/p07.svg`, then final lettering and QA.
 
-Recommended sequence:
+After Page 07 proves the controlled assembly pipeline, proceed in order:
 
-- Page 7: first human-recognition anomaly — current target
-- Page 8: WELCOME BACK flash
-- Pages 9–13: 11:59 convergence / proximity build
-- Pages 14–15: midnight rupture spread
-- Pages 16–24: altered-CDA aftermath, Frequency Three intrusion, doorway decision and WELCOME HOME handoff
-
-For each page, verify character continuity, truck/white-sedan continuity where present, CDA geography, scripted panel count, reveal order, lettering-safe space and Rack focus-region compatibility before approval.
+- Page 08 — WELCOME BACK flash
+- Page 09 — synchronized red signals
+- Page 10 — first 11:59 convergence
+- Page 11 — time stuck / physical pressure
+- Page 12 — wrong shadow / wooden-flute proximity signal
+- Page 13 — countdown
+- Pages 14–15 — rupture spread
+- Pages 16–24 — altered-CDA aftermath, Frequency Three intrusion, doorway decision and WELCOME HOME handoff
