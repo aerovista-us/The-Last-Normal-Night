@@ -153,13 +153,11 @@ p3 = (margin, p2[3] + gap, W - margin, H - 76)
 
 # 12.1: compressed empty intersection with lake beyond; rear of truck added as grounded silhouette.
 street = fit(base_street, (p1[2]-p1[0], p1[3]-p1[1]), crop=(240, 520, 1820, 2560), centering=(0.5, 0.63))
-# subtle horizontal compression toward center to make perspective feel wrong without rupturing
 street = street.resize((int(street.width * 0.88), street.height), Image.Resampling.LANCZOS)
 canvas = Image.new("RGB", (p1[2]-p1[0], p1[3]-p1[1]), "#070b10")
 canvas.paste(street, ((canvas.width-street.width)//2, 0))
 p12.paste(canvas, (p1[0], p1[1]))
 d.rectangle(p1, outline="#111", width=7)
-# simple older-pickup rear silhouette, stopped in intersection
 cx = W // 2
 truck_y = 970
 d.rounded_rectangle((cx-255, truck_y, cx+255, truck_y+235), radius=30, fill="#101417", outline="#343c42", width=5)
@@ -172,14 +170,13 @@ d.text((74, 72), "12.1", font=F(FONT_B, 36), fill="white", stroke_width=2, strok
 road = fit(source_p09, (p2[2]-p2[0], p2[3]-p2[1]), crop=(40, 2280, 2020, 3040), centering=(0.5, 0.7))
 p12.paste(road, (p2[0], p2[1]))
 d.rectangle(p2, outline="#111", width=7)
-# boots at center and shadow thrown hard left-to-right despite lamps in frame
 midy = p2[1] + 115
 d.rectangle((cx-55, midy, cx-15, midy+190), fill="#090b0d")
 d.rectangle((cx+15, midy, cx+55, midy+190), fill="#090b0d")
 d.polygon([(cx-30, midy+170), (cx+10, midy+182), (W-110, p2[3]-58), (W-170, p2[3]-20)], fill="#050607")
 d.text((74, p2[1]+32), "12.2", font=F(FONT_B, 36), fill="white", stroke_width=2, stroke_fill="#111")
 
-# 12.3: one panel containing dashboard/glass/puddle/lake surfaces crossed by one continuous pressure waveform.
+# 12.3: dashboard/glass/puddle/lake surfaces crossed by one continuous pressure waveform.
 ph = p3[3]-p3[1]
 pw = p3[2]-p3[0]
 third = pw // 3
@@ -190,7 +187,6 @@ p12.paste(left, (p3[0], p3[1]))
 p12.paste(mid, (p3[0]+third, p3[1]))
 p12.paste(right, (p3[0]+2*third, p3[1]))
 d.rectangle(p3, outline="#111", width=7)
-# continuous irregular waveform / pressure distortion
 pts=[]
 start_x=p3[0]+60
 end_x=p3[2]-60
@@ -200,13 +196,11 @@ for i in range(0, 241):
     amp=18 + 9*math.sin(i*0.17)
     y=center_y + math.sin(i*0.42)*amp + math.sin(i*0.11)*9
     pts.append((x,y))
-# glow then core
 for width, fill in [(15, "#203743"), (8, "#9fc6d5"), (3, "#eef8fb")]:
     d.line(pts, fill=fill, width=width, joint="curve")
 sfx(d, (120, p3[1]+115), "WOOOOAARRRNNN", 62, fill="#eaf8ff")
 bubble(d, 1630, p3[3]-270, "What the hell—", width=500, fs=38)
 d.text((74, p3[1]+32), "12.3", font=F(FONT_B, 36), fill="white", stroke_width=2, stroke_fill="#111")
-# page number only, matching the clean middle-book page language
 num = "12"
 font = F(FONT_R, 28)
 tw = d.textbbox((0,0), num, font=font)[2]
@@ -214,3 +208,4 @@ d.text(((W-tw)//2, H-58), num, font=font, fill="#111")
 save(p12, 12)
 
 print("P07-P12 corrected build complete")
+# trigger-build: 2026-09-13
