@@ -1,10 +1,11 @@
-name: Build corrected EP1 opening pages
+name: Build corrected EP1 pages
 
 on:
   push:
     branches: [main]
     paths:
       - 'comic/issues/01-the-last-normal-night/production/build_corrected_opening.py'
+      - 'comic/issues/01-the-last-normal-night/production/build_corrected_p07_p12.py'
   workflow_dispatch:
 
 permissions:
@@ -21,16 +22,18 @@ jobs:
           python-version: '3.12'
       - name: Install renderer
         run: python -m pip install --disable-pip-version-check pillow
-      - name: Build corrected Pages 01-06 only
+      - name: Build corrected Pages 01-06
         run: python comic/issues/01-the-last-normal-night/production/build_corrected_opening.py
-      - name: Verify corrected opening masters
+      - name: Build corrected Pages 07-12
+        run: python comic/issues/01-the-last-normal-night/production/build_corrected_p07_p12.py
+      - name: Verify corrected masters
         run: |
           python - <<'PY'
           from pathlib import Path
           from PIL import Image
           root=Path('comic/issues/01-the-last-normal-night/pages')
           failures=[]
-          for n in range(1,7):
+          for n in range(1,13):
               p=root/f'p{n:02d}.png'
               if not p.exists():
                   failures.append(f'missing {p}')
@@ -44,16 +47,17 @@ jobs:
                   failures.append(f'{p}: invalid PNG: {exc}')
           if failures:
               raise SystemExit('\n'.join(failures))
-          print('CORRECTED OPENING QA PASS: p01-p06 exist, decode, and are 2063x3150')
+          print('CORRECTED EP1 QA PASS: p01-p12 exist, decode, and are 2063x3150')
           PY
-      - name: Commit corrected opening pages
+      - name: Commit corrected pages
         run: |
           git config user.name 'AeroVista Build Bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add comic/issues/01-the-last-normal-night/pages/p0[1-6].png
+          git add comic/issues/01-the-last-normal-night/pages/p0[1-9].png
+          git add comic/issues/01-the-last-normal-night/pages/p1[0-2].png
           if git diff --cached --quiet; then
             echo 'No corrected page changes to commit.'
           else
-            git commit -m 'Rebuild corrected EP1 pages 01-06'
+            git commit -m 'Rebuild corrected EP1 pages 01-12'
             git push
           fi
