@@ -1,8 +1,10 @@
-name: Build EP1 canonical pages
+name: Build corrected EP1 opening pages
 
 on:
   push:
     branches: [main]
+    paths:
+      - 'comic/issues/01-the-last-normal-night/production/build_corrected_opening.py'
   workflow_dispatch:
 
 permissions:
@@ -19,18 +21,16 @@ jobs:
           python-version: '3.12'
       - name: Install renderer
         run: python -m pip install --disable-pip-version-check pillow
-      - name: Build canonical missing/rebuilt pages
-        run: python comic/issues/01-the-last-normal-night/production/generate_missing_pages.py
-      - name: Normalize Pages 09-18 to print master resolution
-        run: python comic/issues/01-the-last-normal-night/production/normalize_existing_pages.py
-      - name: Verify complete EP1 PNG master sequence
+      - name: Build corrected Pages 01-06 only
+        run: python comic/issues/01-the-last-normal-night/production/build_corrected_opening.py
+      - name: Verify corrected opening masters
         run: |
           python - <<'PY'
           from pathlib import Path
           from PIL import Image
           root=Path('comic/issues/01-the-last-normal-night/pages')
           failures=[]
-          for n in range(1,25):
+          for n in range(1,7):
               p=root/f'p{n:02d}.png'
               if not p.exists():
                   failures.append(f'missing {p}')
@@ -44,41 +44,16 @@ jobs:
                   failures.append(f'{p}: invalid PNG: {exc}')
           if failures:
               raise SystemExit('\n'.join(failures))
-          print('EP1 STORY QA PASS: 24/24 PNG masters exist, decode, and are 2063x3150')
+          print('CORRECTED OPENING QA PASS: p01-p06 exist, decode, and are 2063x3150')
           PY
-      - name: Build publishing matter and CBZ
-        run: python comic/issues/01-the-last-normal-night/production/generate_publishing_matter.py
-      - name: Verify complete publishing package
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          from PIL import Image
-          issue=Path('comic/issues/01-the-last-normal-night')
-          pages=issue/'pages'
-          for name in ['00-cover-front.png','01-inside-front.png','26-cover-back.png']:
-              p=pages/name
-              assert p.exists(), p
-              with Image.open(p) as im:
-                  assert im.size==(2063,3150), (p,im.size)
-                  im.verify()
-          cbz=issue/'EP1-The-Last-Normal-Night.cbz'
-          assert cbz.exists() and cbz.stat().st_size>0, cbz
-          print('EP1 PUBLISHING QA PASS: covers + inside front + CBZ package verified')
-          PY
-      - name: Commit complete EP1 package
+      - name: Commit corrected opening pages
         run: |
           git config user.name 'AeroVista Build Bot'
           git config user.email 'actions@users.noreply.github.com'
-          git add comic/issues/01-the-last-normal-night/pages/p0[1-9].png
-          git add comic/issues/01-the-last-normal-night/pages/p1[0-9].png
-          git add comic/issues/01-the-last-normal-night/pages/p2[0-4].png
-          git add comic/issues/01-the-last-normal-night/pages/00-cover-front.png
-          git add comic/issues/01-the-last-normal-night/pages/01-inside-front.png
-          git add comic/issues/01-the-last-normal-night/pages/26-cover-back.png
-          git add comic/issues/01-the-last-normal-night/EP1-The-Last-Normal-Night.cbz
+          git add comic/issues/01-the-last-normal-night/pages/p0[1-6].png
           if git diff --cached --quiet; then
-            echo 'No publishing changes to commit.'
+            echo 'No corrected page changes to commit.'
           else
-            git commit -m 'Package complete EP1 issue'
+            git commit -m 'Rebuild corrected EP1 pages 01-06'
             git push
           fi
