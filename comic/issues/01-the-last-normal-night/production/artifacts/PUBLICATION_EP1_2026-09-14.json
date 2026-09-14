@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "issueId": "last-normal-night-issue-1",
-  "sourceCommit": "021c0f29ecc0a80e5cb03df11f8e9fcd9b9cccb2",
-  "publicationVersion": "20260914-final",
+  "sourceCommit": "2b9aaf617247bdebaad1dd3b3400495b1e8a822b",
+  "publicationVersion": "20260914-magazine",
   "cbz": {
     "path": "EP1-The-Last-Normal-Night.cbz",
-    "sha256": "e436fde3cf2fe7feb634a4e286ef6adc77e9e504355b27f5efd228f569937485",
-    "bytes": 49729188,
+    "sha256": "5a0387ddca2e9fa5a6b130602977d021dfdbece4e345ac5f7e0d3feae8c45fd6",
+    "bytes": 49616688,
     "entries": 27
   },
   "focusRegions": {
@@ -18,9 +18,9 @@
     {
       "source": "00-cover-front.png",
       "archive": "00-cover-front.jpg",
-      "sourceSha256": "7b61d19a40527cac6a9b69517e242ef6e0b0c4d9c46d6f274c5f3d33273c8158",
-      "deliverySha256": "2232941d6d52d0eec80cba52cb3fc4cc3af4490eacfce2a3f65a54f091174d78",
-      "deliveryBytes": 1818117
+      "sourceSha256": "a588c65007e26bdeff52220745983aecab4e9bdc72324631eb2fdcd5827e7701",
+      "deliverySha256": "e5510094c75beece2a533fd7e6c4829dbebafaa7fe3844a8f6ebf1efce49edeb",
+      "deliveryBytes": 1691309
     },
     {
       "source": "01-inside-front.png",
