@@ -1,6 +1,6 @@
 from pathlib import Path
 from PIL import Image
-import hashlib, io, json, zipfile
+import hashlib, io, json, zipfile, subprocess
 
 ISSUE=Path(__file__).resolve().parents[1]
 PAGES=ISSUE/'pages'
@@ -8,8 +8,8 @@ ART=ISSUE/'production'/'artifacts'
 ART.mkdir(parents=True,exist_ok=True)
 CBZ=ISSUE/'EP1-The-Last-Normal-Night.cbz'
 W,H=2063,3150
-VERSION='20260914-final'
-SOURCE_COMMIT='021c0f29ecc0a80e5cb03df11f8e9fcd9b9cccb2'
+VERSION='20260914-magazine'
+SOURCE_COMMIT=subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()
 
 items=[('00-cover-front.png','00-cover-front.jpg'),('01-inside-front.png','01-inside-front.jpg')]
 items += [(f'p{n:02d}.png',f'{n+1:02d}-p{n:02d}.jpg') for n in range(1,25)]
