@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "issueId": "last-normal-night-issue-1",
+  "sourceCommit": "021c0f29ecc0a80e5cb03df11f8e9fcd9b9cccb2",
+  "publicationVersion": "20260914-final",
+  "cbz": {
+    "path": "EP1-The-Last-Normal-Night.cbz",
+    "sha256": "e436fde3cf2fe7feb634a4e286ef6adc77e9e504355b27f5efd228f569937485",
+    "bytes": 49729188,
+    "entries": 27
+  },
+  "focusRegions": {
+    "path": "focus-regions.json",
+    "sha256": "a73898819fdc2674e5e0aade5d95dc2818808d99feaaa9cf1d7e6678515b0842",
+    "regions": 91
+  },
+  "files": [
+    {
+      "source": "00-cover-front.png",
+      "archive": "00-cover-front.jpg",
+      "sourceSha256": "7b61d19a40527cac6a9b69517e242ef6e0b0c4d9c46d6f274c5f3d33273c8158",
+      "deliverySha256": "2232941d6d52d0eec80cba52cb3fc4cc3af4490eacfce2a3f65a54f091174d78",
+      "deliveryBytes": 1818117
+    },
+    {
+      "source": "01-inside-front.png",
+      "archive": "01-inside-front.jpg",
+      "sourceSha256": "3fafb8acba3db740f88bffdadb4c7ab736e761b56662e8bddefff2913b57a468",
+      "deliverySha256": "604979990868416f6c339279a0fbf38eb63cd0361e03e65ae6e0ce2c2d54a472",
+      "deliveryBytes": 243143
+    },
+    {
+      "source": "p01.png",
+      "archive": "02-p01.jpg",
+      "sourceSha256": "5ba3507f46332f01565473d244724f3527e5421644befa857e9ef68c22b84af0",
+      "deliverySha256": "39aeb5e8ae653de7eb2671ae51cb4dcde51af16690e039aa3c65160022b67666",
+      "deliveryBytes": 1833119
+    },
+    {
+      "source": "p02.png",
+      "archive": "03-p02.jpg",
+      "sourceSha256": "26a74a40c2f934e37024a539046cf13003e44dff61fa768a4aa3e22a599adb02",
+      "deliverySha256": "efcc216501b6b31b4c37745153b1fa36912c2a16ed22eeb517850e399ad85f24",
+      "deliveryBytes": 1791664
+    },
+    {
+      "source": "p03.png",
+      "archive": "04-p03.jpg",
+      "sourceSha256": "36e1f973c59e271e59136cae9d2002ef140d0882f64ded7a14e6e5573584e5d6",
+      "deliverySha256": "a0f681d26ed8761fc6d2ffc5fe9ed29a0685f7dca4e531c59bc8fc0c6694b1da",
+      "deliveryBytes": 2040391
+    },
+    {
+      "source": "p04.png",
+      "archive": "05-p04.jpg",
+      "sourceSha256": "ca1e779edbfefeeebb16bff5f14fbd4c6301cdb00c66ed7760b7ebb02d1315f1",
+      "deliverySha256": "94ada550c150c01f22382210c01c158464b5a634259c8c12492cc75c0d8760ec",
+      "deliveryBytes": 1949794
+    },
+    {
+      "source": "p05.png",
+      "archive": "06-p05.jpg",
+      "sourceSha256": "63139ee7a0470d1e60b82d46018f58eaeff760cffdf1525ff5505b59a6808f43",
+      "deliverySha256": "d7e3851c89dd7bf4f2e35ec8a8ebdb5367072b79ee17af48a025da77563236af",
+      "deliveryBytes": 2244430
+    },
+    {
+      "source": "p06.png",
+      "archive": "07-p06.jpg",
+      "sourceSha256": "7fd47e638a7ece20cf3d5921a3defdef658d474e526fd79bb4431c70cc3f75c7",
+      "deliverySha256": "129890ef71d9ba70a36c9e58e0515de92d9c8aa08cf0b4521c1433f1ff0625af",
+      "deliveryBytes": 1545749
+    },
+    {
+      "source": "p07.png",
+      "archive": "08-p07.jpg",
+      "sourceSha256": "794c2a469914d0797d63a70965079d4836f6b6d8447fad1565254162a6fcce84",
+      "deliverySha256": "336823859ed62fa0f48952ca118a05dea99cf67ac64ed0687515d6acbf51fb1c",
+      "deliveryBytes": 2214795
+    },
+    {
+      "source": "p08.png",
+      "archive": "09-p08.jpg",
+      "sourceSha256": "01ca320ad969a364c3fcf81b480c56878517689ada1e34e0fc9663538bd93f8e",
+      "deliverySha256": "5645011bd5ca68236a68a7fde76ee53969db62dbd12dcf194712c714666d58dc",
+      "deliveryBytes": 2125338
+    },
+    {
+      "source": "p09.png",
+      "archive": "10-p09.jpg",
+      "sourceSha256": "70dea5f2ff84864c73d4c986878195445d804ec432d908cf84a4016d65d16178",
+      "deliverySha256": "2cd8c2ce6f31dde566d2e62db51ae6b8908ab58ea0042d2ffc9c7d288689c8d9",
+      "deliveryBytes": 2098783
+    },
+    {
+      "source": "p10.png",
+      "archive": "11-p10.jpg",
+      "sourceSha256": "91d6f49aab3a92f6277e5b7b18e33ac8fc4fe84a79c90f373c6f9259e2e893e4",
+      "deliverySha256": "e52d4e84126b73b63af33d5aca6c20e0425a0b2dd2302ac5a0daa5572379d49e",
+      "deliveryBytes": 1728545
+    },
+    {
+      "source": "p11.png",
+      "archive": "12-p11.jpg",
+      "sourceSha256": "0a4532fc25a4548428fa04eaf31dfa5084ed778c5fb1b94f0b8072fb8a163f87",
+      "deliverySha256": "41d3ff98b02a10d7a710f9033dbccf8a53f234b23f1d3fd6e077ef5b5264209f",
+      "deliveryBytes": 1579129
+    },
+    {
+      "source": "p12.png",
+      "archive": "13-p12.jpg",
+      "sourceSha256": "4be30818e0519f910ec242f66ccdbb96d5e4e3281ed2e049861d4cc98cc8b2d0",
+      "deliverySha256": "bd5ca5cea7318dccb7538e94d9d5828225703877d0775d16b2e1c46ba19c082f",
+      "deliveryBytes": 1816962
+    },
+    {
+      "source": "p13.png",
+      "archive": "14-p13.jpg",
+      "sourceSha256": "ed616f61e9fb3976f5e25f128dc7d1d80205a7a89836ee8a9590fbf878f094d0",
+      "deliverySha256": "78bd52b414c78d9a2b587300fe6e3e2ce1f55ba55e3df25a2ea2a1d6250bff9f",
+      "deliveryBytes": 2138153
+    },
+    {
+      "source": "p14.png",
+      "archive": "15-p14.jpg",
+      "sourceSha256": "c06a90606a7f0b244fc9bc76cb1d6f2a027895e24c9229996fbeaa8b2b6ce872",
+      "deliverySha256": "0bd867392987f5ad9b7abecd52528d5060be12c83a1c923f60e7d91a822fd3cd",
+      "deliveryBytes": 1760373
+    },
+    {
+      "source": "p15.png",
+      "archive": "16-p15.jpg",
+      "sourceSha256": "bdd9c9a78d356fe9d5c00098a17bad477515ceaf5f5e18174db504cec430c579",
+      "deliverySha256": "622445d7eae33af6ce24c3e73c1a54c61b9b4cd028564628a276ab6345a71359",
+      "deliveryBytes": 1690318
+    },
+    {
+      "source": "p16.png",
+      "archive": "17-p16.jpg",
+      "sourceSha256": "560e41f488e677ab926a53829be476d79d6ba571cbaf45c6c0e96eb29f8e164a",
+      "deliverySha256": "11b551f078988e87e79cf9f0cb891420295b9dbd6bd1ca6eb735bd0d9fa114c2",
+      "deliveryBytes": 2078482
+    },
+    {
+      "source": "p17.png",
+      "archive": "18-p17.jpg",
+      "sourceSha256": "bc6c571c04ee423d67a4773d40b9ab971319a14bbda27674e404ce7097824c8c",
+      "deliverySha256": "f3f4d7f01586d444409743b7a979e56a5ac5e1f2370cf1b62b384b77b144c9b4",
+      "deliveryBytes": 1901968
+    },
+    {
+      "source": "p18.png",
+      "archive": "19-p18.jpg",
+      "sourceSha256": "803b7ecb7095e94db8c4d8f3e49b83c577fa9e9e955135eae6f6f01fdc6adfcb",
+      "deliverySha256": "bae5fa4f5b780e49c810d5112a2dbde12551aae62a2c8528fb905ebfd069c7a5",
+      "deliveryBytes": 1397816
+    },
+    {
+      "source": "p19.png",
+      "archive": "20-p19.jpg",
+      "sourceSha256": "253ae809d39d41dd9d8c0a29c4661bedde0a3b8dde4532e2713f9c79c6387374",
+      "deliverySha256": "83ea96abb6168ee0c749ea6f33dddfd04f9f15a804111edc8087ac99258a9456",
+      "deliveryBytes": 2036187
+    },
+    {
+      "source": "p20.png",
+      "archive": "21-p20.jpg",
+      "sourceSha256": "a26cf0996cb897ac3d6db8a11ce1a75d1dae1428aa2b784cadac1c4ec4749d6a",
+      "deliverySha256": "a4bc5bb7eca2d693cf610832f5ad2e3ef33fe24e5ea2ddabb86da234e029a4a8",
+      "deliveryBytes": 2367380
+    },
+    {
+      "source": "p21.png",
+      "archive": "22-p21.jpg",
+      "sourceSha256": "0a310f3262a92765ab90cfe8a0776474f332156aff2c48122b7c60247b4d9fd7",
+      "deliverySha256": "1e76f53f55b3e7b2ccbab90f957e5631adf1aee5a47718e0eb64464f13c1cd86",
+      "deliveryBytes": 2205504
+    },
+    {
+      "source": "p22.png",
+      "archive": "23-p22.jpg",
+      "sourceSha256": "d3363b2308ec327ef33e7bf78b22024c5ae73bf0ad2ab3ceda7fa690bde6c19f",
+      "deliverySha256": "317531c611d03e5d746ddabbb195eb732870ae04baf3370aa1087e850fed1d4d",
+      "deliveryBytes": 2332955
+    },
+    {
+      "source": "p23.png",
+      "archive": "24-p23.jpg",
+      "sourceSha256": "fccdd663994be951a182f3f2053a39d959930773d2d762900562f9bb76300493",
+      "deliverySha256": "6df5a97e65381671d5e7f6d96b9a1f757aae73d01e7d2ac6475f971a970f57f0",
+      "deliveryBytes": 2513724
+    },
+    {
+      "source": "p24.png",
+      "archive": "25-p24.jpg",
+      "sourceSha256": "6a782f3cdc8d561f003a9ba36ae62ff981dd027ba9cb24cfed0fa1aacee0f733",
+      "deliverySha256": "66a60800bf11fb03beb5b7cb4c4b3c9d3e3478c5d2110bcfcb778ad938dac472",
+      "deliveryBytes": 1440311
+    },
+    {
+      "source": "26-cover-back.png",
+      "archive": "26-cover-back.jpg",
+      "sourceSha256": "e1b879cde3a6837ecff86895c097172dfb4e384832e814826b4c336322e41c54",
+      "deliverySha256": "9438c5d3c84c25aa933838cac3fc4008b36c2169fb7d8fa5dce31c5e96bf5125",
+      "deliveryBytes": 1957637
+    }
+  ]
+}

@@ -1,140 +1,698 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "issueId": "last-normal-night-issue-1",
-  "format": { "width": 2063, "height": 3150 },
-  "notes": "Normalized regions for The Rack Panel Focus. Coordinates are provisional until final page layouts are rendered; final QA must verify balloons and faces remain inside each region.",
+  "format": {
+    "width": 2063,
+    "height": 3150
+  },
+  "sourceCommit": "021c0f29ecc0a80e5cb03df11f8e9fcd9b9cccb2",
+  "generatedAt": "2026-09-14",
+  "notes": "Final Rack Panel Focus regions regenerated against the canonical promoted P01-P24 page masters. Regions follow rendered panel geometry, not provisional storyboard geometry.",
   "pages": {
-    "p01": [{"x":0.03,"y":0.03,"w":0.94,"h":0.94,"label":"Opening lake and CDA splash"}],
+    "p01": [
+      {
+        "x": 0.0126,
+        "y": 0.054,
+        "w": 0.9748,
+        "h": 0.9111,
+        "label": "Opening lake and CDA splash"
+      }
+    ],
     "p02": [
-      {"x":0.04,"y":0.04,"w":0.92,"h":0.24,"label":"Bar establishing panel"},
-      {"x":0.04,"y":0.32,"w":0.44,"h":0.27,"label":"Beer and protagonist"},
-      {"x":0.52,"y":0.32,"w":0.44,"h":0.27,"label":"Friend relationship story"},
-      {"x":0.04,"y":0.63,"w":0.92,"h":0.33,"label":"Warm room closing panel"}
+      {
+        "x": 0.0126,
+        "y": 0.0571,
+        "w": 0.9748,
+        "h": 0.2317,
+        "label": "Bar establishing panel"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.2933,
+        "w": 0.4838,
+        "h": 0.2571,
+        "label": "Beer and protagonist"
+      },
+      {
+        "x": 0.5032,
+        "y": 0.2933,
+        "w": 0.4842,
+        "h": 0.2571,
+        "label": "Friend relationship story"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.5549,
+        "w": 0.9748,
+        "h": 0.407,
+        "label": "Warm room closing panel"
+      }
     ],
     "p03": [
-      {"x":0.04,"y":0.04,"w":0.92,"h":0.20,"label":"Exit bar"},
-      {"x":0.04,"y":0.28,"w":0.44,"h":0.25,"label":"Phone twelve percent"},
-      {"x":0.52,"y":0.28,"w":0.44,"h":0.25,"label":"Passing bass truck"},
-      {"x":0.04,"y":0.57,"w":0.44,"h":0.39,"label":"His truck and lake wind"},
-      {"x":0.52,"y":0.57,"w":0.44,"h":0.39,"label":"White sedan first appearance"}
+      {
+        "x": 0.0126,
+        "y": 0.0571,
+        "w": 0.9748,
+        "h": 0.1937,
+        "label": "Exit bar"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.2552,
+        "w": 0.4838,
+        "h": 0.1619,
+        "label": "Phone twelve percent"
+      },
+      {
+        "x": 0.5032,
+        "y": 0.2552,
+        "w": 0.4842,
+        "h": 0.1619,
+        "label": "Passing bass truck"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.4216,
+        "w": 0.9748,
+        "h": 0.2063,
+        "label": "His truck and lake wind"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.6324,
+        "w": 0.9748,
+        "h": 0.3295,
+        "label": "White sedan first appearance"
+      }
     ],
     "p04": [
-      {"x":0.04,"y":0.04,"w":0.92,"h":0.23,"label":"Dog barking"},
-      {"x":0.04,"y":0.31,"w":0.92,"h":0.20,"label":"Same street goes silent"},
-      {"x":0.04,"y":0.55,"w":0.40,"h":0.22,"label":"Protagonist notices"},
-      {"x":0.04,"y":0.80,"w":0.92,"h":0.16,"label":"Empty street behind him"}
+      {
+        "x": 0.0126,
+        "y": 0.0571,
+        "w": 0.9748,
+        "h": 0.1968,
+        "label": "Dog barking"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.2584,
+        "w": 0.9748,
+        "h": 0.1968,
+        "label": "Same street goes silent"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.4597,
+        "w": 0.9748,
+        "h": 0.2006,
+        "label": "Protagonist notices"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.6648,
+        "w": 0.9748,
+        "h": 0.2971,
+        "label": "Empty street behind him"
+      }
     ],
     "p05": [
-      {"x":0.04,"y":0.04,"w":0.92,"h":0.23,"label":"Streetlight ahead"},
-      {"x":0.04,"y":0.31,"w":0.92,"h":0.20,"label":"Light shuts off"},
-      {"x":0.04,"y":0.55,"w":0.92,"h":0.20,"label":"Light returns and signal changes"},
-      {"x":0.04,"y":0.79,"w":0.92,"h":0.17,"label":"Whisper from empty sidewalk"}
+      {
+        "x": 0.0126,
+        "y": 0.0571,
+        "w": 0.9748,
+        "h": 0.2032,
+        "label": "Streetlight ahead"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.2648,
+        "w": 0.9748,
+        "h": 0.2,
+        "label": "Light shuts off"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.4692,
+        "w": 0.9748,
+        "h": 0.226,
+        "label": "Light returns and signal changes"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.6997,
+        "w": 0.9748,
+        "h": 0.2622,
+        "label": "Whisper from empty sidewalk"
+      }
     ],
     "p06": [
-      {"x":0.04,"y":0.04,"w":0.92,"h":0.20,"label":"Sherman feels stretched"},
-      {"x":0.04,"y":0.28,"w":0.44,"h":0.24,"label":"White sedan passes"},
-      {"x":0.52,"y":0.28,"w":0.44,"h":0.24,"label":"Same sedan repeats"},
-      {"x":0.04,"y":0.56,"w":0.44,"h":0.40,"label":"Digital sign 11:58"},
-      {"x":0.52,"y":0.56,"w":0.44,"h":0.40,"label":"Digital sign reverses to 11:57"}
+      {
+        "x": 0.0126,
+        "y": 0.0571,
+        "w": 0.9748,
+        "h": 0.1937,
+        "label": "Sherman feels stretched"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.2552,
+        "w": 0.4838,
+        "h": 0.1937,
+        "label": "White sedan passes"
+      },
+      {
+        "x": 0.5032,
+        "y": 0.2552,
+        "w": 0.4842,
+        "h": 0.1937,
+        "label": "Same sedan repeats"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.4533,
+        "w": 0.4838,
+        "h": 0.1905,
+        "label": "Digital sign 11:58"
+      },
+      {
+        "x": 0.5032,
+        "y": 0.4533,
+        "w": 0.4842,
+        "h": 0.1905,
+        "label": "Digital sign reverses to 11:57"
+      },
+      {
+        "x": 0.0126,
+        "y": 0.6483,
+        "w": 0.9748,
+        "h": 0.3137,
+        "label": "He looks back / Wait"
+      }
     ],
     "p07": [
-      {"x":0.04,"y":0.04,"w":0.92,"h":0.24,"label":"Convenience store establishing"},
-      {"x":0.04,"y":0.32,"w":0.44,"h":0.27,"label":"Clerk recognizes him"},
-      {"x":0.52,"y":0.32,"w":0.44,"h":0.27,"label":"Good what"},
-      {"x":0.04,"y":0.63,"w":0.92,"h":0.33,"label":"Clerk smiles"}
+      {
+        "x": 0.0087,
+        "y": 0.0441,
+        "w": 0.9825,
+        "h": 0.2733,
+        "label": "Convenience store establishing"
+      },
+      {
+        "x": 0.0087,
+        "y": 0.319,
+        "w": 0.9825,
+        "h": 0.2213,
+        "label": "Clerk recognizes him"
+      },
+      {
+        "x": 0.0087,
+        "y": 0.541,
+        "w": 0.9825,
+        "h": 0.2102,
+        "label": "Good what"
+      },
+      {
+        "x": 0.0087,
+        "y": 0.7517,
+        "w": 0.9825,
+        "h": 0.2244,
+        "label": "Clerk smiles / good night"
+      }
     ],
     "p08": [
-      {"x":0.04,"y":0.04,"w":0.92,"h":0.22,"label":"Empty Sherman"},
-      {"x":0.04,"y":0.30,"w":0.92,"h":0.22,"label":"Frozen lake"},
-      {"x":0.04,"y":0.56,"w":0.44,"h":0.40,"label":"Phone no service"},
-      {"x":0.52,"y":0.56,"w":0.44,"h":0.40,"label":"WELCOME BACK flash"}
+      {
+        "x": 0.0097,
+        "y": 0.0556,
+        "w": 0.9806,
+        "h": 0.3156,
+        "label": "Empty Sherman"
+      },
+      {
+        "x": 0.0097,
+        "y": 0.3775,
+        "w": 0.9806,
+        "h": 0.2406,
+        "label": "Frozen lake"
+      },
+      {
+        "x": 0.0097,
+        "y": 0.6184,
+        "w": 0.4784,
+        "h": 0.3273,
+        "label": "Phone no service"
+      },
+      {
+        "x": 0.4968,
+        "y": 0.6184,
+        "w": 0.4935,
+        "h": 0.3273,
+        "label": "WELCOME BACK flash"
+      }
     ],
     "p09": [
-      {"x":0.04,"y":0.04,"w":0.92,"h":0.18,"label":"White sedan idling"},
-      {"x":0.04,"y":0.26,"w":0.44,"h":0.25,"label":"Dent and dim tail light"},
-      {"x":0.52,"y":0.26,"w":0.44,"h":0.25,"label":"First signal clicks red"},
-      {"x":0.04,"y":0.55,"w":0.92,"h":0.20,"label":"Sherman signals cascade red"},
-      {"x":0.04,"y":0.79,"w":0.92,"h":0.17,"label":"Car vanished"}
+      {
+        "x": 0.0107,
+        "y": 0.0029,
+        "w": 0.9806,
+        "h": 0.2721,
+        "label": "White sedan idling"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.2797,
+        "w": 0.4857,
+        "h": 0.2492,
+        "label": "Dent and dim tail light"
+      },
+      {
+        "x": 0.5046,
+        "y": 0.2797,
+        "w": 0.4867,
+        "h": 0.2492,
+        "label": "First signal clicks red"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.5321,
+        "w": 0.9806,
+        "h": 0.1917,
+        "label": "Sherman signals cascade red"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.7276,
+        "w": 0.9806,
+        "h": 0.2495,
+        "label": "Car vanished / Nope"
+      }
     ],
     "p10": [
-      {"x":0.04,"y":0.04,"w":0.44,"h":0.25,"label":"Dashboard 11:59"},
-      {"x":0.52,"y":0.04,"w":0.44,"h":0.25,"label":"Phone 11:59"},
-      {"x":0.04,"y":0.33,"w":0.44,"h":0.25,"label":"Store clock 11:59"},
-      {"x":0.52,"y":0.33,"w":0.44,"h":0.25,"label":"Street sign 11:59"},
-      {"x":0.04,"y":0.62,"w":0.92,"h":0.34,"label":"Protagonist realizes convergence"}
+      {
+        "x": 0.0102,
+        "y": 0.0029,
+        "w": 0.4862,
+        "h": 0.2994,
+        "label": "Dashboard 11:59"
+      },
+      {
+        "x": 0.5061,
+        "y": 0.0029,
+        "w": 0.4842,
+        "h": 0.2994,
+        "label": "Phone 11:59"
+      },
+      {
+        "x": 0.0102,
+        "y": 0.307,
+        "w": 0.4872,
+        "h": 0.3092,
+        "label": "Store clock 11:59"
+      },
+      {
+        "x": 0.5065,
+        "y": 0.307,
+        "w": 0.4838,
+        "h": 0.3092,
+        "label": "Street sign 11:59"
+      },
+      {
+        "x": 0.0102,
+        "y": 0.621,
+        "w": 0.9801,
+        "h": 0.3565,
+        "label": "Protagonist realizes convergence"
+      }
     ],
     "p11": [
-      {"x":0.04,"y":0.04,"w":0.44,"h":0.27,"label":"Dashboard stuck"},
-      {"x":0.52,"y":0.04,"w":0.44,"h":0.27,"label":"Phone stuck"},
-      {"x":0.04,"y":0.35,"w":0.44,"h":0.27,"label":"Engine starts"},
-      {"x":0.52,"y":0.35,"w":0.44,"h":0.27,"label":"Rearview misalignment"},
-      {"x":0.04,"y":0.66,"w":0.44,"h":0.30,"label":"Glass creak"},
-      {"x":0.52,"y":0.66,"w":0.44,"h":0.30,"label":"Pressure fills cab"}
+      {
+        "x": 0.0097,
+        "y": 0.0,
+        "w": 0.4847,
+        "h": 0.3317,
+        "label": "Dashboard stuck"
+      },
+      {
+        "x": 0.5036,
+        "y": 0.0,
+        "w": 0.4838,
+        "h": 0.3317,
+        "label": "Phone stuck"
+      },
+      {
+        "x": 0.0097,
+        "y": 0.3362,
+        "w": 0.4847,
+        "h": 0.2943,
+        "label": "Engine starts"
+      },
+      {
+        "x": 0.5036,
+        "y": 0.3362,
+        "w": 0.4838,
+        "h": 0.2943,
+        "label": "Rearview misalignment"
+      },
+      {
+        "x": 0.0097,
+        "y": 0.6346,
+        "w": 0.4847,
+        "h": 0.3425,
+        "label": "Glass creak"
+      },
+      {
+        "x": 0.5036,
+        "y": 0.6346,
+        "w": 0.4838,
+        "h": 0.3425,
+        "label": "Pressure fills cab"
+      }
     ],
     "p12": [
-      {"x":0.03,"y":0.03,"w":0.94,"h":0.38,"label":"Truck in compressed intersection"},
-      {"x":0.04,"y":0.45,"w":0.92,"h":0.16,"label":"Wrong shadow"},
-      {"x":0.03,"y":0.65,"w":0.94,"h":0.32,"label":"Wooden-flute pressure signal"}
+      {
+        "x": 0.0097,
+        "y": 0.0556,
+        "w": 0.9806,
+        "h": 0.3667,
+        "label": "Truck in compressed intersection"
+      },
+      {
+        "x": 0.0097,
+        "y": 0.4267,
+        "w": 0.9806,
+        "h": 0.1575,
+        "label": "Wrong shadow"
+      },
+      {
+        "x": 0.0097,
+        "y": 0.5886,
+        "w": 0.9806,
+        "h": 0.3844,
+        "label": "Wooden-flute pressure signal"
+      }
     ],
     "p13": [
-      {"x":0.04,"y":0.03,"w":0.92,"h":0.14,"label":"Ten"},
-      {"x":0.04,"y":0.19,"w":0.92,"h":0.14,"label":"Nine and eight"},
-      {"x":0.04,"y":0.35,"w":0.92,"h":0.14,"label":"Seven and six"},
-      {"x":0.04,"y":0.51,"w":0.92,"h":0.14,"label":"Five"},
-      {"x":0.04,"y":0.67,"w":0.92,"h":0.14,"label":"Four and three"},
-      {"x":0.04,"y":0.83,"w":0.92,"h":0.14,"label":"Two and one"}
+      {
+        "x": 0.0,
+        "y": 0.001,
+        "w": 1.0,
+        "h": 0.1533,
+        "label": "Ten"
+      },
+      {
+        "x": 0.0,
+        "y": 0.1562,
+        "w": 1.0,
+        "h": 0.1489,
+        "label": "Nine and eight"
+      },
+      {
+        "x": 0.0,
+        "y": 0.3076,
+        "w": 1.0,
+        "h": 0.1476,
+        "label": "Seven and six"
+      },
+      {
+        "x": 0.0,
+        "y": 0.4578,
+        "w": 1.0,
+        "h": 0.1435,
+        "label": "Five"
+      },
+      {
+        "x": 0.0,
+        "y": 0.6038,
+        "w": 1.0,
+        "h": 0.1537,
+        "label": "Four and three"
+      },
+      {
+        "x": 0.0,
+        "y": 0.76,
+        "w": 1.0,
+        "h": 0.2156,
+        "label": "Two and one"
+      }
     ],
-    "p14": [{"x":0.02,"y":0.03,"w":0.96,"h":0.94,"label":"Rupture spread left half"}],
-    "p15": [{"x":0.02,"y":0.03,"w":0.96,"h":0.94,"label":"Rupture spread right half"}],
+    "p14": [
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.9651,
+        "label": "Rupture spread left half"
+      }
+    ],
+    "p15": [
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.9651,
+        "label": "Rupture spread right half"
+      }
+    ],
     "p16": [
-      {"x":0.03,"y":0.03,"w":0.94,"h":0.44,"label":"Wakes beside truck"},
-      {"x":0.03,"y":0.52,"w":0.94,"h":0.45,"label":"Same street almost"}
+      {
+        "x": 0.0116,
+        "y": 0.0029,
+        "w": 0.4828,
+        "h": 0.974,
+        "label": "Wakes beside truck"
+      },
+      {
+        "x": 0.5065,
+        "y": 0.0029,
+        "w": 0.4828,
+        "h": 0.974,
+        "label": "Same street almost"
+      }
     ],
     "p17": [
-      {"x":0.04,"y":0.04,"w":0.92,"h":0.22,"label":"Watching windows"},
-      {"x":0.04,"y":0.30,"w":0.44,"h":0.28,"label":"Truck starts without key"},
-      {"x":0.52,"y":0.30,"w":0.44,"h":0.28,"label":"Key still in hand"},
-      {"x":0.04,"y":0.62,"w":0.92,"h":0.34,"label":"Radio display 03"}
+      {
+        "x": 0.0107,
+        "y": 0.007,
+        "w": 0.4823,
+        "h": 0.3359,
+        "label": "Watching windows"
+      },
+      {
+        "x": 0.5012,
+        "y": 0.007,
+        "w": 0.4881,
+        "h": 0.3359,
+        "label": "Truck starts without key"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.3486,
+        "w": 0.9787,
+        "h": 0.3324,
+        "label": "Key still in hand"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.6867,
+        "w": 0.9787,
+        "h": 0.2886,
+        "label": "Radio display 03"
+      }
     ],
     "p18": [
-      {"x":0.04,"y":0.04,"w":0.92,"h":0.18,"label":"Static in cab"},
-      {"x":0.04,"y":0.26,"w":0.44,"h":0.25,"label":"Waveform breathes"},
-      {"x":0.52,"y":0.26,"w":0.44,"h":0.25,"label":"You finally made it"},
-      {"x":0.04,"y":0.55,"w":0.44,"h":0.41,"label":"Who is this"},
-      {"x":0.52,"y":0.55,"w":0.44,"h":0.41,"label":"Radio dies"}
+      {
+        "x": 0.0107,
+        "y": 0.007,
+        "w": 0.4823,
+        "h": 0.2756,
+        "label": "Static in cab"
+      },
+      {
+        "x": 0.5012,
+        "y": 0.007,
+        "w": 0.4881,
+        "h": 0.2756,
+        "label": "Waveform breathes"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.2883,
+        "w": 0.9787,
+        "h": 0.2498,
+        "label": "You finally made it"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.5438,
+        "w": 0.9787,
+        "h": 0.2117,
+        "label": "Who is this"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.7613,
+        "w": 0.9787,
+        "h": 0.214,
+        "label": "Radio dies / 03 then dark"
+      }
     ],
     "p19": [
-      {"x":0.04,"y":0.04,"w":0.92,"h":0.23,"label":"Altered buildings"},
-      {"x":0.04,"y":0.31,"w":0.92,"h":0.20,"label":"Wrong billboard date"},
-      {"x":0.04,"y":0.55,"w":0.44,"h":0.41,"label":"Stops breathing hard"},
-      {"x":0.52,"y":0.55,"w":0.44,"h":0.41,"label":"He laughs"}
+      {
+        "x": 0.0107,
+        "y": 0.007,
+        "w": 0.9787,
+        "h": 0.2692,
+        "label": "Altered buildings"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.2819,
+        "w": 0.4779,
+        "h": 0.2625,
+        "label": "Wrong date / Shit"
+      },
+      {
+        "x": 0.4973,
+        "y": 0.2819,
+        "w": 0.492,
+        "h": 0.2625,
+        "label": "Stops breathing hard"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.5502,
+        "w": 0.9787,
+        "h": 0.4251,
+        "label": "Curiosity wins / Of course"
+      }
     ],
     "p20": [
-      {"x":0.03,"y":0.03,"w":0.94,"h":0.27,"label":"Electrical tear begins"},
-      {"x":0.03,"y":0.34,"w":0.94,"h":0.24,"label":"Doorway forms"},
-      {"x":0.03,"y":0.62,"w":0.94,"h":0.35,"label":"Old world inside doorway"}
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.2873,
+        "label": "Electrical tear begins"
+      },
+      {
+        "x": 0.0,
+        "y": 0.293,
+        "w": 1.0,
+        "h": 0.2689,
+        "label": "Doorway forms"
+      },
+      {
+        "x": 0.0,
+        "y": 0.5676,
+        "w": 1.0,
+        "h": 0.414,
+        "label": "Old world inside doorway / Home"
+      }
     ],
     "p21": [
-      {"x":0.04,"y":0.04,"w":0.92,"h":0.22,"label":"Approaches threshold"},
-      {"x":0.04,"y":0.30,"w":0.44,"h":0.27,"label":"Friend laughing inside old world"},
-      {"x":0.52,"y":0.30,"w":0.44,"h":0.27,"label":"Old truck and familiar street"},
-      {"x":0.04,"y":0.61,"w":0.92,"h":0.35,"label":"Inches from crossing"}
+      {
+        "x": 0.0107,
+        "y": 0.007,
+        "w": 0.9787,
+        "h": 0.2787,
+        "label": "Approaches threshold"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.2914,
+        "w": 0.4779,
+        "h": 0.28,
+        "label": "Friend laughing inside old world"
+      },
+      {
+        "x": 0.4973,
+        "y": 0.2914,
+        "w": 0.492,
+        "h": 0.28,
+        "label": "Old truck and familiar street"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.5771,
+        "w": 0.9787,
+        "h": 0.3981,
+        "label": "Inches from crossing"
+      }
     ],
     "p22": [
-      {"x":0.04,"y":0.04,"w":0.44,"h":0.22,"label":"One step"},
-      {"x":0.52,"y":0.04,"w":0.44,"h":0.22,"label":"Two steps"},
-      {"x":0.04,"y":0.30,"w":0.92,"h":0.18,"label":"He stops"},
-      {"x":0.04,"y":0.52,"w":0.92,"h":0.18,"label":"Looks at altered CDA"},
-      {"x":0.04,"y":0.74,"w":0.92,"h":0.22,"label":"Nah / sideways choice"}
+      {
+        "x": 0.0107,
+        "y": 0.007,
+        "w": 0.4779,
+        "h": 0.2946,
+        "label": "One step"
+      },
+      {
+        "x": 0.4973,
+        "y": 0.007,
+        "w": 0.492,
+        "h": 0.2946,
+        "label": "Two steps"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.3073,
+        "w": 0.9787,
+        "h": 0.1784,
+        "label": "He stops at threshold"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.4914,
+        "w": 0.9787,
+        "h": 0.2578,
+        "label": "Looks at altered CDA"
+      },
+      {
+        "x": 0.0107,
+        "y": 0.7549,
+        "w": 0.9787,
+        "h": 0.2203,
+        "label": "Nah / sideways choice"
+      }
     ],
     "p23": [
-      {"x":0.03,"y":0.03,"w":0.94,"h":0.27,"label":"Doorway shivers"},
-      {"x":0.03,"y":0.34,"w":0.94,"h":0.24,"label":"Doorway collapses"},
-      {"x":0.03,"y":0.62,"w":0.94,"h":0.35,"label":"He remains / wrong dawn begins"}
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.2921,
+        "label": "Doorway shivers"
+      },
+      {
+        "x": 0.0,
+        "y": 0.2978,
+        "w": 1.0,
+        "h": 0.261,
+        "label": "Doorway collapses"
+      },
+      {
+        "x": 0.0,
+        "y": 0.5587,
+        "w": 1.0,
+        "h": 0.4229,
+        "label": "He remains / wrong dawn begins"
+      }
     ],
     "p24": [
-      {"x":0.02,"y":0.02,"w":0.96,"h":0.96,"label":"Wrong-side morning end splash"},
-      {"x":0.50,"y":0.62,"w":0.42,"h":0.30,"label":"Phone WELCOME HOME detail"}
+      {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 0.9816,
+        "label": "Wrong-side morning end splash"
+      },
+      {
+        "x": 0.6641,
+        "y": 0.6032,
+        "w": 0.2569,
+        "h": 0.2794,
+        "label": "Phone FULL / WELCOME HOME"
+      }
     ]
   }
 }
