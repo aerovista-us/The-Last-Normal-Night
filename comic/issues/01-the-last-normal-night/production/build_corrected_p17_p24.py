@@ -57,21 +57,20 @@ def crop_band(im,y1,y2): return im.crop((0,int(im.height*y1),im.width,int(im.hei
 noir=Image.open(NOIR).convert('RGB'); rainy=Image.open(RAINY).convert('RGB'); bar=Image.open(BAR).convert('RGB'); lake=Image.open(LAKE).convert('RGB'); off=Image.open(OFF).convert('RGB'); old17=fetch_baseline('p17.png'); old18=fetch_baseline('p18.png')
 oldworld=bar.crop((0,0,1015,390))
 
-# P17 — 4 beats: watchers / self-start / key still out / 03
+# P17 — 4 clean beats: watchers / self-start / key still out / 03
 p=Image.new('RGB',(W,H),PAPER); d=ImageDraw.Draw(p)
 panel(p,old17.crop((20,15,1015,1110)),(22,22,1017,1080),(.5,.5),.90)
-panel(p,rainy.crop((0,610,1015,1005)),(1034,22,2041,1080),(.48,.5),.86)
-# Preserve the real hand/key from the baseline, but replace the wrong vehicle grille with the canonical Ford.
-mid=fit(old17.crop((20,1120,2040,2130)),(2019,1047),(.5,.5)); p.paste(mid,(22,1098))
-ford=fit(rainy.crop((0,610,1015,1005)),(960,1047),(.40,.5)); mask=Image.new('L',(960,1047),0); md=ImageDraw.Draw(mask)
-for x in range(960): md.line((x,0,x,1047),fill=max(0,min(255,int((x-60)/280*255))))
-p.paste(ford,(1081,1098),mask)
+panel(p,rainy.crop((0,705,1015,955)),(1034,22,2041,1080),(.44,.5),.86)
+txt(d,(1180,875),'RRRRMM',54,True); bubble(d,(1115,930,1420,1055),'No.',34)
+# Beat 3: preserve the photographed hand/key, keep the Ford as the physical anchor, and avoid source-page gutter debris.
+left=fit(old17.crop((20,1180,1110,2100)),(1040,1047),(.34,.52)); p.paste(left,(22,1098))
+ford=fit(rainy.crop((0,705,1015,955)),(999,1047),(.40,.5)); p.paste(ford,(1042,1098))
 d.rectangle((22,1098,2041,2145),outline=INK,width=8)
-# Cover only the Toyota emblem on the key fob; preserve the photographed hand and metal key.
-d.ellipse((760,1810,850,1900),fill='#15171a',outline='#5d6166',width=3)
+d.rounded_rectangle((865,1810,945,1888),20,fill='#17191c',outline='#4a4d50',width=2); d.line((884,1848,926,1848),fill='#8b8e91',width=3)
 caption(d,(80,1960,690,2060),'Key still in his hand.',30)
-panel(p,old17.crop((22,2160,2040,3010)),(22,2163,2041,3072),(.5,.55),.84)
-txt(d,(1190,875),'RRRRMM',54,True); bubble(d,(1120,930,1425,1055),'No.',34); txt(d,(105,2860),'KSSSSHHH',42,True)
+# Beat 4: clean radio close-up only.
+panel(p,old17.crop((22,2160,2040,3010)),(22,2163,2041,3072),(.5,.58),.84)
+txt(d,(105,2860),'KSSSSHHH',42,True)
 save(p,17)
 
 # P18 — exact 5 beats from immutable baseline, plus the scripted 03-then-dark beat.
@@ -79,8 +78,12 @@ p=Image.new('RGB',(W,H),PAPER); d=ImageDraw.Draw(p)
 boxes=[(22,22,1017,890),(1034,22,2041,890),(22,908,2041,1695),(22,1713,2041,2380),(22,2398,2041,3072)]
 src=[old18.crop((20,15,1015,965)), old18.crop((1025,15,2040,965)), old18.crop((20,985,2040,1905)), old18.crop((20,1900,2040,3000)), old17.crop((50,2160,2010,3010))]
 for s0,b0 in zip(src,boxes): panel(p,s0,b0,(.5,.5),.90)
-# Fifth beat: display holds 03 for one beat, then the right side dies.
-d.rectangle((1390,2430,2015,3035),fill='#050607'); txt(d,(1250,2520),'03',84,True,fill='#bfead4',stroke=1); txt(d,(1690,2770),'—',84,True,fill='#2a2d30',stroke=0)
+# Fifth beat: the same display holds 03 for one beat, then fades into dead dark without a hard repair block.
+grad=Image.new('RGBA',(2019,674),(0,0,0,0)); gd=ImageDraw.Draw(grad)
+for x in range(2019):
+    a=max(0,min(235,int((x-850)/900*235)))
+    gd.line((x,0,x,674),fill=(0,0,0,a))
+p.alpha_composite(grad,(22,2398)) if p.mode=='RGBA' else p.paste(grad,(22,2398),grad)
 save(p,18)
 
 # P19 — curiosity wins
@@ -114,19 +117,19 @@ panel(p,off,(22,1818,2041,3072),(.5,.54),.72,cold=.12); doorway(p,(900,1895,1880
 caption(d,(95,2790,960,2920),'All I had to do was walk back through.',30)
 save(p,21)
 
-# P22 — defining choice, 5 panels
+# P22 — defining choice, exactly 5 panels
 p=Image.new('RGB',(W,H),PAPER); d=ImageDraw.Draw(p)
-# 1 step
+# 1 — one step toward the doorway
 panel(p,noir.crop((0,770,1015,1230)),(22,22,1008,950),(.56,.5),.78,cold=.08); doorway(p,(500,130,930,860),oldworld); caption(d,(80,750,390,850),'One step.',28)
-# 2 steps, warm world dominant
+# 2 — second step; warm old world dominates
 panel(p,oldworld,(1026,22,2041,950),(.5,.52),.98,warm=.05); d.rectangle((1050,60,2015,925),outline='#eaf8ff',width=10); caption(d,(1100,750,1370,850),'Two.',28)
-# boots stop at threshold: abstract grounded close-up from protagonist lower body
+# 3 — he stops before crossing
 panel(p,noir.crop((0,760,1015,1230)),(22,968,2041,1530),(.50,.86),.72,cold=.06); d.line((1030,1000,1030,1490),fill='#eefaff',width=12)
-# look toward altered CDA
-panel(p,off,(22,1548,1008,2360),(.55,.52),.73,cold=.18)
-panel(p,noir.crop((490,380,1015,780)),(1026,1548,2041,2360),(.52,.52),.90,cold=.05)
-# sideways choice
-panel(p,off,(22,2378,2041,3072),(.5,.54),.68,cold=.12); doorway(p,(1320,2420,1885,2990),oldworld); bubble(d,(960,2670,1245,2820),'Nah.',36)
+# 4 — altered CDA and his reaction share one authored panel, no extra bordered inset
+panel(p,off,(22,1548,2041,2250),(.55,.52),.73,cold=.18)
+face=fit(noir.crop((490,380,1015,780)),(620,650),(.52,.52)); mask=Image.new('L',face.size,0); md=ImageDraw.Draw(mask); md.ellipse((0,0,620,650),fill=210); mask=mask.filter(ImageFilter.GaussianBlur(45)); p.paste(face,(1330,1585),mask)
+# 5 — deliberate sideways refusal
+panel(p,off,(22,2268,2041,3072),(.5,.54),.68,cold=.12); doorway(p,(1320,2330,1885,2980),oldworld); bubble(d,(960,2620,1245,2770),'Nah.',36)
 save(p,22)
 
 # P23 — collapse and wrong dawn begins
@@ -154,13 +157,14 @@ grad=Image.new('RGBA',(W,H),(0,0,0,0)); gd=ImageDraw.Draw(grad)
 for x in range(0,900,8):
     a=max(0,100-int(x/9)); gd.rectangle((x,0,x+8,H),fill=(250,152,96,a))
 bg=Image.alpha_composite(bg,grad).convert('RGB'); p=bg; d=ImageDraw.Draw(p)
-# fading moon halo opposite dawn
-mx,my=1845,250
-for r,a in [(120,45),(90,65),(58,100)]: d.ellipse((mx-r,my-r,mx+r,my+r),outline=(225,236,240),width=3)
-# small truck/protagonist in foreground, not dominant
-truck=fit(rainy.crop((0,610,1015,1000)),(760,360),(.48,.52)); truck=ImageEnhance.Brightness(truck).enhance(.74)
-# feather truck into foreground so the splash stays one composition rather than adding a second panel
-mask=Image.new('L',truck.size,0); md=ImageDraw.Draw(mask); md.rounded_rectangle((18,18,truck.width-18,truck.height-18),50,fill=230); mask=mask.filter(ImageFilter.GaussianBlur(24)); p.paste(truck,(55,2510),mask)
+# fading moon halo opposite dawn — one faint atmospheric ring, not a target graphic.
+halo=Image.new('RGBA',(W,H),(0,0,0,0)); hd=ImageDraw.Draw(halo); mx,my=1845,250
+hd.ellipse((mx-105,my-105,mx+105,my+105),outline=(225,236,240,78),width=5); halo=halo.filter(ImageFilter.GaussianBlur(2)); p=Image.alpha_composite(p.convert('RGBA'),halo).convert('RGB'); d=ImageDraw.Draw(p)
+# Grounded foreground cue includes BOTH the canonical Ford and protagonist, integrated into the splash.
+fg=fit(rainy.crop((0,1235,1015,1530)),(1030,455),(.42,.55)); fg=ImageEnhance.Brightness(fg).enhance(.72)
+mask=Image.new('L',fg.size,0); md=ImageDraw.Draw(mask)
+# Strong edge fade keeps this as a foreground memory/anchor inside the full splash, not a framed second panel.
+md.ellipse((95,35,fg.width-70,fg.height-25),fill=245); mask=mask.filter(ImageFilter.GaussianBlur(88)); p.paste(fg,(5,2465),mask)
 # phone inset, readable but secondary
 phone=(1370,1900,1900,2780); d.rounded_rectangle(phone,55,fill='#0c0e12',outline='#d8dde3',width=7); d.rounded_rectangle((1415,1980,1855,2665),28,fill='#101823',outline='#2d3947',width=4)
 txt(d,(1470,2040),'FULL',34,True,fill='#d8f2e1',stroke=0); txt(d,(1635,2240),'WELCOME',42,True,fill='#eaf3f5',stroke=0,anchor='mm'); txt(d,(1635,2310),'HOME',54,True,fill='#eaf3f5',stroke=0,anchor='mm'); bubble(d,(1160,2780,1455,2915),'Figures.',30)
