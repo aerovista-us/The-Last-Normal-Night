@@ -1,4 +1,4 @@
-name: Build corrected EP1 pages through 16
+name: Build corrected EP1 pages through 24
 
 on:
   push:
@@ -7,6 +7,7 @@ on:
       - 'comic/issues/01-the-last-normal-night/production/build_corrected_opening.py'
       - 'comic/issues/01-the-last-normal-night/production/build_corrected_p07_p12.py'
       - 'comic/issues/01-the-last-normal-night/production/build_corrected_p14_p16.py'
+      - 'comic/issues/01-the-last-normal-night/production/build_corrected_p17_p24.py'
       - '.github/workflows/build-ep1-pages.yml'
   workflow_dispatch:
 
@@ -42,6 +43,8 @@ jobs:
         run: python comic/issues/01-the-last-normal-night/production/build_corrected_p07_p12.py
       - name: Build continuous rupture spread and Page 16
         run: python comic/issues/01-the-last-normal-night/production/build_corrected_p14_p16.py
+      - name: Build corrected Pages 17-24
+        run: python comic/issues/01-the-last-normal-night/production/build_corrected_p17_p24.py
       - name: Verify promoted masters
         run: |
           python - <<'PY'
@@ -51,7 +54,7 @@ jobs:
           root=Path('comic/issues/01-the-last-normal-night')
           pages=root/'pages'
           failures=[]
-          for n in range(1,17):
+          for n in range(1,25):
               p=pages/f'p{n:02d}.png'
               if not p.exists():
                   failures.append(f'missing {p}')
@@ -83,22 +86,27 @@ jobs:
           manifest=root/'production'/'artifacts'/'PROMOTION_2026-09-13.md'
           if not manifest.exists():
               failures.append(f'missing {manifest}')
+          ending_manifest=root/'production'/'artifacts'/'PROMOTION_P17_P24_2026-09-14.md'
+          if not ending_manifest.exists():
+              failures.append(f'missing {ending_manifest}')
           if failures:
               raise SystemExit('\n'.join(failures))
-          print('EP1 QA PASS: p01-p16 valid; spread 4050x3150; P13 unchanged; overlap verified')
+          print('EP1 QA PASS: p01-p24 valid; spread 4050x3150; P13 unchanged; overlap verified')
           PY
-      - name: Commit promoted pages and spread master
+      - name: Commit promoted pages, spread master, and ending
         run: |
           git config user.name 'AeroVista Build Bot'
           git config user.email 'actions@users.noreply.github.com'
           git add comic/issues/01-the-last-normal-night/pages/p0[1-9].png
           git add comic/issues/01-the-last-normal-night/pages/p1[0-2].png
-          git add comic/issues/01-the-last-normal-night/pages/p1[4-6].png
+          git add comic/issues/01-the-last-normal-night/pages/p1[4-9].png
+          git add comic/issues/01-the-last-normal-night/pages/p2[0-4].png
           git add comic/issues/01-the-last-normal-night/production/artifacts/p14-p15-spread-master.png
           git add comic/issues/01-the-last-normal-night/production/artifacts/PROMOTION_2026-09-13.md
+          git add comic/issues/01-the-last-normal-night/production/artifacts/PROMOTION_P17_P24_2026-09-14.md
           if git diff --cached --quiet; then
             echo 'No promoted page changes to commit.'
           else
-            git commit -m 'Promote corrected EP1 pages through 16'
+            git commit -m 'Promote corrected EP1 pages through 24'
             git push
           fi
