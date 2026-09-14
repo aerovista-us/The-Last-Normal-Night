@@ -1,21 +1,21 @@
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance, ImageOps
 import hashlib
 
 ISSUE=Path(__file__).resolve().parents[1]; P=ISSUE/'pages'
 W,H=2063,3150
-BG=Image.open(P/'p01.png').convert('RGB')
-# Crop away comic furniture, then cover the full bleed canvas with the CDA night art.
-art=BG.crop((26,170,2037,3040)).resize((W,H),Image.Resampling.LANCZOS)
+BG=Image.open(ISSUE/'2026-09-10__19-30-37__Moonlit-Lakeside-Town-Reflections__file_00000000a43c8230a403848b7670b888.png').convert('RGB')
+# Use the clean canonical CDA environment plate, never a lettered comic page, as the cover background.
+art=ImageOps.fit(BG,(W,H),method=Image.Resampling.LANCZOS,centering=(0.52,0.52))
 # Cinematic dark editorial grade.
 art=ImageEnhance.Contrast(art).enhance(1.08); art=ImageEnhance.Color(art).enhance(.82); art=ImageEnhance.Brightness(art).enhance(.72)
 # Use canonical protagonist/truck art as a grounded foreground anchor.
 src=Image.open(P/'p16.png').convert('RGB')
-hero=src.crop((0,180,1040,3030)).resize((880,2415),Image.Resampling.LANCZOS)
+hero=src.crop((0,360,1010,3030)).resize((850,2250),Image.Resampling.LANCZOS)
 mask=Image.new('L',hero.size,255); md=ImageDraw.Draw(mask)
 for i in range(95):
     v=int(255*i/94); md.rectangle((i,i,hero.width-i-1,hero.height-i-1),outline=v)
-mask=mask.filter(ImageFilter.GaussianBlur(40)); art.paste(hero,(0,735),mask)
+mask=mask.filter(ImageFilter.GaussianBlur(40)); art.paste(hero,(0,900),mask)
 d=ImageDraw.Draw(art)
 FONT='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; BOLD='/usr/share/fonts/truetype/dejavu/DejaVuSansCondensed-Bold.ttf'
 def F(p,s): return ImageFont.truetype(p,s)
