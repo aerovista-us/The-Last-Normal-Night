@@ -1,0 +1,50 @@
+name: Manual rebuild EP1 Page 02
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'comic/issues/01-the-last-normal-night/production/manual_rebuild_p02.py'
+      - '.github/workflows/manual-rebuild-p02.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check pillow
+      - name: Rebuild Page 02
+        run: python comic/issues/01-the-last-normal-night/production/manual_rebuild_p02.py
+      - name: Validate Page 02
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          p=Path('comic/issues/01-the-last-normal-night/pages/p02.png')
+          with Image.open(p) as im:
+              assert im.size==(2063,3150), im.size
+              im.verify()
+          assert Path('comic/issues/01-the-last-normal-night/production/artifacts/MANUAL_P02_2026-09-16.md').exists()
+          print('P02 manual QA PASS')
+          PY
+      - name: Commit Page 02
+        run: |
+          git config user.name 'AeroVista Build Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          git add comic/issues/01-the-last-normal-night/pages/p02.png
+          git add comic/issues/01-the-last-normal-night/production/artifacts/MANUAL_P02_2026-09-16.md
+          if git diff --cached --quiet; then
+            echo 'No Page 02 changes to commit.'
+          else
+            git commit -m 'Promote manually rebuilt EP1 Page 02'
+            git push
+          fi
