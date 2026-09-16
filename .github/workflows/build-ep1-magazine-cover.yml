@@ -1,7 +1,12 @@
-name: Build EP1 magazine cover
+name: Build EP1 publishing covers
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/build-ep1-magazine-cover.yml'
+      - 'comic/issues/01-the-last-normal-night/production/build_magazine_cover.py'
+      - 'comic/issues/01-the-last-normal-night/production/build_back_cover.py'
 
 permissions:
   contents: write
@@ -15,30 +20,38 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install --disable-pip-version-check pillow
-      - name: Build real magazine cover
+      - name: Build real magazine front cover
         run: python comic/issues/01-the-last-normal-night/production/build_magazine_cover.py
+      - name: Build production back cover
+        run: python comic/issues/01-the-last-normal-night/production/build_back_cover.py
       - name: Rebuild publication package
         run: python comic/issues/01-the-last-normal-night/production/build_publication.py
       - name: Verify production dimensions
         run: |
           python - <<'PY'
           from PIL import Image
-          p='comic/issues/01-the-last-normal-night/pages/00-cover-front.png'
-          assert Image.open(p).size == (2063,3150)
-          print('cover verified', Image.open(p).size)
+          from pathlib import Path
+          pages=Path('comic/issues/01-the-last-normal-night/pages')
+          for name in ('00-cover-front.png','26-cover-back.png'):
+              p=pages/name
+              with Image.open(p) as im:
+                  assert im.size == (2063,3150), (name, im.size)
+                  im.verify()
+              print(name, 'verified 2063x3150')
           PY
-      - name: Commit generated cover
+      - name: Commit generated publishing covers
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add comic/issues/01-the-last-normal-night/pages/00-cover-front.png \
                   comic/issues/01-the-last-normal-night/pages/00-cover-front-web.jpg \
+                  comic/issues/01-the-last-normal-night/pages/26-cover-back.png \
                   comic/issues/01-the-last-normal-night/EP1-The-Last-Normal-Night.cbz \
                   comic/issues/01-the-last-normal-night/production/artifacts/rack-issue-1.json \
                   comic/issues/01-the-last-normal-night/production/artifacts/PUBLICATION_EP1_2026-09-14.json
           if git diff --cached --quiet; then
-            echo 'No cover changes.'
+            echo 'No publishing-cover changes.'
           else
-            git commit -m 'Promote EP1 real magazine cover'
+            git commit -m 'Promote EP1 front and back covers'
             git push
           fi
