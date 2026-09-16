@@ -48,8 +48,8 @@ p1=(M,ct,W-M,ct+630); r2=p1[3]+G; p2=(M,r2,W//2-G//2,r2+560); p3=(W//2+G//2,r2,W
 # Five distinct authored beats from four separate source plates.
 art=fit(mystery,(p1[2]-p1[0],p1[3]-p1[1]),(0,0,1015,360),(.44,.55)); p.paste(art,p1[:2]); border(d,p1)
 art=fit(moose,(p2[2]-p2[0],p2[3]-p2[1]),(585,390,1015,745),(.56,.55)); p.paste(art,p2[:2]); border(d,p2)
-# Upper-truck crop deliberately excludes the generated 11:59 license plate.
-art=fit(rainy,(p3[2]-p3[0],p3[3]-p3[1]),(0,670,1015,850),(.36,.42)); p.paste(art,p3[:2]); border(d,p3)
+# Start below the source-board gutter and stay above the generated 11:59 plate.
+art=fit(rainy,(p3[2]-p3[0],p3[3]-p3[1]),(0,700,1015,850),(.36,.50)); p.paste(art,p3[:2]); border(d,p3)
 # Same continuity rule here: stay above the noncanonical plate detail.
 art=fit(noir,(p4[2]-p4[0],p4[3]-p4[1]),(0,0,1015,300),(.28,.45)); p.paste(art,p4[:2]); border(d,p4)
 # Start below the source-board gutter so the white-car beat is one clean panel.
@@ -62,5 +62,5 @@ d.text((p3[0]+160,p3[1]+360),'WHUMM—WHUMM',font=F(42,True),fill=WHITE,stroke_w
 caption(d,1270,p4[3]-130,'Cool lake wind moving through the air.',650,26)
 
 out=PAGES/'p03.png'; p.save(out,'PNG',optimize=True,dpi=(300,300)); sha=hashlib.sha256(out.read_bytes()).hexdigest()
-(ART/'MANUAL_P03_2026-09-16.md').write_text('# EP1 Manual Page 03 Promotion\n\nFive-beat rebuild from the locked script. Uses four separate source plates; no storyboard labels are rendered. Premature generated 11:59 plate details are cropped out.\n\n'+f'- Size: {W}×{H}\n- SHA-256: `{sha}`\n',encoding='utf-8')
+(ART/'MANUAL_P03_2026-09-16.md').write_text('# EP1 Manual Page 03 Promotion\n\nFive-beat rebuild from the locked script. Uses four separate source plates; no storyboard labels are rendered. Premature generated 11:59 plate details and source-board gutters are cropped out.\n\n'+f'- Size: {W}×{H}\n- SHA-256: `{sha}`\n',encoding='utf-8')
 print('manual P03 complete',sha)
