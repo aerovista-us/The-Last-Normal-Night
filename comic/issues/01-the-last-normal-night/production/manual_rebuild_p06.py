@@ -43,26 +43,27 @@ p2=(M,y2,mid-G//2,y2+760); p3=(mid+G//2,y2,W-M,y2+760)
 y3=p2[3]+G; p4=(M,y3,mid-G//2,cb); p5=(mid+G//2,y3,W-M,cb)
 
 # 06.1 — recognizable Sherman axis, subtly stretched rather than fantastically altered.
-a=fit(mystery,(p1[2]-p1[0],p1[3]-p1[1]),(0,0,1015,360),(.54,.54)); a=a.resize((int(a.width*1.06),a.height),Image.Resampling.LANCZOS); a=ImageOps.fit(a,(p1[2]-p1[0],p1[3]-p1[1]),Image.Resampling.LANCZOS,centering=(.52,.5)); p.paste(a,p1[:2]); border(d,p1)
+a=fit(mystery,(p1[2]-p1[0],p1[3]-p1[1]),(0,0,1015,350),(.54,.54)); a=a.resize((int(a.width*1.06),a.height),Image.Resampling.LANCZOS); a=ImageOps.fit(a,(p1[2]-p1[0],p1[3]-p1[1]),Image.Resampling.LANCZOS,centering=(.52,.5)); p.paste(a,p1[:2]); border(d,p1)
 caption(d,1210,p1[1]+455,'Walked downtown but the road felt stretched.',760,27)
 
-# 06.2 / 06.3 — the same white sedan repeats from the same direction; two crops make the recurrence readable without magical effects.
-car_crop=(0,905,1015,1185)
+# 06.2 / 06.3 — same sedan, same direction; second view tightens on the rear damage and tail lights.
+car_crop=(0,930,1015,1170)
 a=fit(mystery,(p2[2]-p2[0],p2[3]-p2[1]),car_crop,(.62,.53)); p.paste(a,p2[:2]); border(d,p2)
-a=fit(mystery,(p3[2]-p3[0],p3[3]-p3[1]),car_crop,(.76,.53)); a=ImageEnhance.Contrast(a).enhance(1.04); p.paste(a,p3[:2]); border(d,p3)
+tight=(430,930,1015,1170)
+a=fit(mystery,(p3[2]-p3[0],p3[3]-p3[1]),tight,(.62,.53)); a=ImageEnhance.Contrast(a).enhance(1.04); p.paste(a,p3[:2]); border(d,p3)
 
 # 06.4 — ordinary downtown plate with one controlled digital sign reading 11:58.
-a=fit(noir,(p4[2]-p4[0],p4[3]-p4[1]),(0,795,1015,1205),(.48,.56)); p.paste(a,p4[:2]); border(d,p4)
+a=fit(noir,(p4[2]-p4[0],p4[3]-p4[1]),(0,820,1015,1180),(.48,.56)); p.paste(a,p4[:2]); border(d,p4)
 sign(d,(p4[0]+150,p4[1]+160,p4[2]-120,p4[1]+390),'11:58')
 
 # 06.5 — same sign has moved backward to 11:57; protagonist is now visibly looking back.
-a=fit(noir,(p5[2]-p5[0],p5[3]-p5[1]),(595,395,1015,790),(.55,.52)); p.paste(a,p5[:2]); border(d,p5)
+a=fit(noir,(p5[2]-p5[0],p5[3]-p5[1]),(600,420,1015,775),(.55,.52)); p.paste(a,p5[:2]); border(d,p5)
 sign(d,(p5[0]+150,p5[1]+155,p5[2]-120,p5[1]+385),'11:57')
 bubble(d,p5[0]+650,p5[1]+525,'Wait.',230,28)
 
 out=PAGES/'p06.png'; p.save(out,'PNG',optimize=True,dpi=(300,300)); sha=hashlib.sha256(out.read_bytes()).hexdigest()
 (ART/'MANUAL_P06_2026-09-16.md').write_text(
     '# EP1 Manual Page 06 Promotion\n\n'
-    'Five-panel rebuild from the locked script. Sherman is only subtly stretched. The same white sedan repeats from the same direction using two controlled crops. The clock contradiction is typeset in layout as 11:58 then 11:57; 11:59 is not introduced early. No storyboard or production-note lettering is rendered.\n\n'
+    'Five-panel rebuild from the locked script. Sherman is only subtly stretched. The same white sedan repeats from the same direction, with the second crop tightening on the rear damage and tail lights. Source-board gutters are excluded. The clock contradiction is typeset in layout as 11:58 then 11:57; 11:59 is not introduced early. No storyboard or production-note lettering is rendered.\n\n'
     f'- Size: {W}×{H}\n- SHA-256: `{sha}`\n',encoding='utf-8')
 print('manual P06 complete',sha)
