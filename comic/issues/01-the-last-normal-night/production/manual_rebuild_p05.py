@@ -55,8 +55,8 @@ mid=p3[0]+760
 left=fit(mystery,(760,p3[3]-p3[1]),(220,1220,820,1535),(.56,.50)); p.paste(left,(p3[0],p3[1]))
 right=fit(noir,(p3[2]-mid,p3[3]-p3[1]),(0,1210,1015,1548),(.64,.52)); p.paste(right,(mid,p3[1]))
 d.line((mid,p3[1],mid,p3[3]),fill=WHITE,width=7); border(d,p3)
-# The controlled bar strip covers the generated source time and depicts 1 → 5 → none without debug labels.
-signal_states(p,p3[0]+75,p3[1]+115); bubble(d,1500,p3[1]+405,'Come on.',300,27)
+# The controlled bar strip fully replaces the generated source time and depicts 1 → 5 → none without debug labels.
+signal_states(p,p3[0]+55,p3[1]+45); bubble(d,1500,p3[1]+405,'Come on.',300,27)
 # 05.4 — same ordinary street continuity, now read as empty of any possible speaker.
 a=fit(mystery,(p4[2]-p4[0],p4[3]-p4[1]),(0,645,1015,905),(.42,.54)); p.paste(a,p4[:2]); border(d,p4)
 whisper(d,1420,p4[1]+250,'Don’t go home.',420,26); bubble(d,470,p4[1]+390,'Hello?',250,27)
@@ -64,6 +64,6 @@ whisper(d,1420,p4[1]+250,'Don’t go home.',420,26); bubble(d,470,p4[1]+390,'Hel
 out=PAGES/'p05.png'; p.save(out,'PNG',optimize=True,dpi=(300,300)); sha=hashlib.sha256(out.read_bytes()).hexdigest()
 (ART/'MANUAL_P05_2026-09-16.md').write_text(
     '# EP1 Manual Page 05 Promotion\n\n'
-    'Four-panel manual rebuild from the locked script. Lamp-on/lamp-off continuity is intentional. The phone stays in the protagonist’s hand on the street; its source time and board gutter are removed beneath controlled 1-to-5-to-none signal-state artwork. The whisper panel remains ordinary pre-rupture street geography with no visible speaker. No storyboard or production-note lettering is rendered.\n\n'
+    'Four-panel manual rebuild from the locked script. Lamp-on/lamp-off continuity is intentional. The phone stays in the protagonist’s hand on the street; its generated source time and board gutter are fully removed beneath controlled 1-to-5-to-none signal-state artwork. The whisper panel remains ordinary pre-rupture street geography with no visible speaker. No storyboard or production-note lettering is rendered.\n\n'
     f'- Size: {W}×{H}\n- SHA-256: `{sha}`\n',encoding='utf-8')
 print('manual P05 complete',sha)
