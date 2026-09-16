@@ -1,5 +1,5 @@
 from pathlib import Path
-from PIL import Image, ImageDraw, ImageFont, ImageOps, ImageEnhance
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 import hashlib
 
 ISSUE=Path(__file__).resolve().parents[1]
@@ -7,7 +7,6 @@ PAGES=ISSUE/'pages'; ART=ISSUE/'production'/'artifacts'; ART.mkdir(parents=True,
 W,H=2063,3150; HEADER_H,FOOTER_H=150,76; M,G=24,16
 INK='#071018'; PAPER='#f3ead0'; WHITE='#f4f5f2'
 MYSTERY=ISSUE/'2026-09-10__21-01-40__Rainy-Lakeside-Mystery__file_00000000bbec81fdaa4852d0305d3a1e.png'
-NOIR=ISSUE/'2026-09-10__20-58-21__Rainy-Noir-in-Downtown-Coeur-dAlene__file_00000000706481fdb43883c8c8ec1289.png'
 FONT='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf'; BOLD='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'; ITAL='/usr/share/fonts/truetype/dejavu/DejaVuSans-Oblique.ttf'
 
 def F(s,b=False,i=False): return ImageFont.truetype(ITAL if i else (BOLD if b else FONT),s)
@@ -27,7 +26,7 @@ def header(p):
 def footer(p):
     d=ImageDraw.Draw(p); y=H-FOOTER_H; d.rectangle((0,y,W,H),fill=INK); d.text((42,y+20),'EchoStory · EP1 · THE LAST NORMAL NIGHT',font=F(22),fill='#d8e0e4'); d.text((1510,y+20),'04',font=F(23,True),fill=WHITE)
 
-mystery=Image.open(MYSTERY).convert('RGB'); noir=Image.open(NOIR).convert('RGB')
+mystery=Image.open(MYSTERY).convert('RGB')
 p=Image.new('RGB',(W,H),INK); header(p); footer(p); d=ImageDraw.Draw(p); ct=HEADER_H+10; cb=H-FOOTER_H-10
 # Four horizontal beats. Panels 1 and 2 deliberately repeat the exact framing.
 h=660; p1=(M,ct,W-M,ct+h); p2=(M,p1[3]+G,W-M,p1[3]+G+h); p3=(M,p2[3]+G,W-M,p2[3]+G+610); p4=(M,p3[3]+G,W-M,cb)
@@ -37,7 +36,8 @@ p.paste(walk,p1[:2]); border(d,p1)
 # Intentional exact repeated composition: the silence is the change.
 p.paste(walk,p2[:2]); border(d,p2)
 close=fit(mystery,(p3[2]-p3[0],p3[3]-p3[1]),(0,360,1015,645),(.36,.55)); p.paste(close,p3[:2]); border(d,p3)
-empty=fit(noir,(p4[2]-p4[0],p4[3]-p4[1]),(0,1180,1015,1548),(.36,.52)); empty=ImageEnhance.Brightness(empty).enhance(.80); p.paste(empty,p4[:2]); border(d,p4)
+# Clean third source panel: protagonist continues with an over-shoulder view down the street.
+empty=fit(mystery,(p4[2]-p4[0],p4[3]-p4[1]),(0,650,1015,905),(.42,.54)); p.paste(empty,p4[:2]); border(d,p4)
 
 # Locked-script lettering only. No panel labels or production directions.
 d.text((1510,540),'WOOF. WOOF.',font=F(42,True),fill=WHITE,stroke_width=2,stroke_fill='#111')
@@ -48,6 +48,6 @@ caption(d,1330,p4[3]-105,'Didn’t notice then.',520,27)
 out=PAGES/'p04.png'; p.save(out,'PNG',optimize=True,dpi=(300,300)); sha=hashlib.sha256(out.read_bytes()).hexdigest()
 (ART/'MANUAL_P04_2026-09-16.md').write_text(
     '# EP1 Manual Page 04 Promotion\n\n'
-    'Four-beat rebuild from the locked script. Panels 1 and 2 intentionally reuse the exact framing because the script calls for the same shot one beat later; this is documented repetition, not accidental source reuse. No storyboard labels are rendered.\n\n'
+    'Four-beat rebuild from the locked script. Panels 1 and 2 intentionally reuse the exact framing because the script calls for the same shot one beat later; this is documented repetition, not accidental source reuse. Panel 4 uses a clean source-panel crop with no inherited board gutter. No storyboard labels are rendered.\n\n'
     f'- Size: {W}×{H}\n- SHA-256: `{sha}`\n',encoding='utf-8')
 print('manual P04 complete',sha)
