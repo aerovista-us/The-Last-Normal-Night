@@ -77,8 +77,8 @@ p4=(MARGIN,mt+mh+GAP,W-MARGIN,cb)
 art=fit(src,(p1[2]-p1[0],p1[3]-p1[1]),(0,390,590,745),(.53,.55)); p.paste(art,p1[:2]); border(d,p1)
 # P2: protagonist listening with beer/friends.
 art=fit(src,(p2[2]-p2[0],p2[3]-p2[1]),(0,390,590,745),(.48,.56)); p.paste(art,p2[:2]); border(d,p2)
-# P3: relationship conversation close-up.
-art=fit(src,(p3[2]-p3[0],p3[3]-p3[1]),(0,745,560,1120),(.54,.50)); p.paste(art,p3[:2]); border(d,p3)
+# P3: relationship conversation close-up. Stop before the source-board gutter.
+art=fit(src,(p3[2]-p3[0],p3[3]-p3[1]),(0,745,475,1120),(.54,.50)); p.paste(art,p3[:2]); border(d,p3)
 # P4: warm bar / friends / laughter beat.
 art=fit(src,(p4[2]-p4[0],p4[3]-p4[1]),(0,0,1015,390),(.49,.52)); p.paste(art,p4[:2]); border(d,p4)
 
