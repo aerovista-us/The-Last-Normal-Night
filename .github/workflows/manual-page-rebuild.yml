@@ -1,0 +1,105 @@
+name: Manual EP1 page rebuild
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'comic/issues/01-the-last-normal-night/production/manual_rebuild_p*.py'
+      - '.github/workflows/manual-page-rebuild.yml'
+  workflow_dispatch:
+    inputs:
+      page:
+        description: 'Two-digit page number, e.g. 03'
+        required: true
+        default: '03'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install Pillow
+        run: python -m pip install --disable-pip-version-check pillow
+      - name: Select manual page scripts
+        id: select
+        shell: bash
+        run: |
+          root='comic/issues/01-the-last-normal-night/production'
+          if [ '${{ github.event_name }}' = 'workflow_dispatch' ]; then
+            files="$root/manual_rebuild_p${{ inputs.page }}.py"
+          else
+            files=$(git diff --name-only HEAD^ HEAD -- "$root/manual_rebuild_p*.py" || true)
+          fi
+          if [ -z "$files" ]; then
+            echo 'No manual page scripts changed.'
+            echo 'files=' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          printf '%s\n' "$files"
+          echo "files<<EOF" >> "$GITHUB_OUTPUT"
+          printf '%s\n' "$files" >> "$GITHUB_OUTPUT"
+          echo 'EOF' >> "$GITHUB_OUTPUT"
+      - name: Rebuild selected pages
+        if: steps.select.outputs.files != ''
+        shell: bash
+        run: |
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            if grep -q 'panel_label(' "$f"; then
+              echo "Production-label helper is forbidden in manual masters: $f"
+              exit 1
+            fi
+            python "$f"
+          done <<< '${{ steps.select.outputs.files }}'
+      - name: Validate selected pages
+        if: steps.select.outputs.files != ''
+        env:
+          FILES: ${{ steps.select.outputs.files }}
+        run: |
+          python - <<'PY'
+          import os,re
+          from pathlib import Path
+          from PIL import Image
+          root=Path('comic/issues/01-the-last-normal-night')
+          pages=root/'pages'
+          artifacts=root/'production'/'artifacts'
+          for line in os.environ['FILES'].splitlines():
+              m=re.search(r'manual_rebuild_p(\d\d)\.py$', line)
+              if not m: continue
+              n=m.group(1); p=pages/f'p{n}.png'
+              with Image.open(p) as im:
+                  assert im.size==(2063,3150), (p,im.size)
+                  im.verify()
+              manifest=artifacts/f'MANUAL_P{n}_2026-09-16.md'
+              assert manifest.exists(), manifest
+              print('manual QA PASS', p)
+          PY
+      - name: Commit selected masters
+        if: steps.select.outputs.files != ''
+        env:
+          FILES: ${{ steps.select.outputs.files }}
+        shell: bash
+        run: |
+          git config user.name 'AeroVista Build Bot'
+          git config user.email 'actions@users.noreply.github.com'
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            n=$(basename "$f" | sed -E 's/manual_rebuild_p([0-9]{2})\.py/\1/')
+            git add "comic/issues/01-the-last-normal-night/pages/p${n}.png"
+            git add "comic/issues/01-the-last-normal-night/production/artifacts/MANUAL_P${n}_2026-09-16.md"
+          done <<< "$FILES"
+          if git diff --cached --quiet; then
+            echo 'No manual page changes to commit.'
+          else
+            git commit -m 'Promote manually rebuilt EP1 page masters'
+            git push
+          fi
