@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "issueId": "last-normal-night-issue-1",
-  "sourceCommit": "2b9aaf617247bdebaad1dd3b3400495b1e8a822b",
+  "sourceCommit": "099b0f722dd219b3b03f8f1fbde85c60ad798850",
   "publicationVersion": "20260914-magazine",
   "cbz": {
     "path": "EP1-The-Last-Normal-Night.cbz",
-    "sha256": "5a0387ddca2e9fa5a6b130602977d021dfdbece4e345ac5f7e0d3feae8c45fd6",
-    "bytes": 49616688,
+    "sha256": "1483761977f088994bb14491acdf36e96352cd558f68cc1cb201c686b5bf0cde",
+    "bytes": 48759783,
     "entries": 27
   },
   "focusRegions": {
@@ -144,16 +144,16 @@
     {
       "source": "p17.png",
       "archive": "18-p17.jpg",
-      "sourceSha256": "bc6c571c04ee423d67a4773d40b9ab971319a14bbda27674e404ce7097824c8c",
-      "deliverySha256": "f3f4d7f01586d444409743b7a979e56a5ac5e1f2370cf1b62b384b77b144c9b4",
-      "deliveryBytes": 1901968
+      "sourceSha256": "50eacb453731d1ee2b59c9c5310968d3dc0954918ec3e1e359dfebf0bffb8941",
+      "deliverySha256": "714506b9ab703bd2dff93309f9c2025a7effa565fcd6a8b026b0208fffe71dd1",
+      "deliveryBytes": 1706075
     },
     {
       "source": "p18.png",
       "archive": "19-p18.jpg",
-      "sourceSha256": "803b7ecb7095e94db8c4d8f3e49b83c577fa9e9e955135eae6f6f01fdc6adfcb",
-      "deliverySha256": "bae5fa4f5b780e49c810d5112a2dbde12551aae62a2c8528fb905ebfd069c7a5",
-      "deliveryBytes": 1397816
+      "sourceSha256": "f43eb390f011a818717f7a10c6fbf9e6f150a279b2f4d454b6b5d5f2c5c9724a",
+      "deliverySha256": "d2b9321d2df4285269712bb0f97318cffae8bac01581fd5118171d9883f986b1",
+      "deliveryBytes": 1396268
     },
     {
       "source": "p19.png",
@@ -179,9 +179,9 @@
     {
       "source": "p22.png",
       "archive": "23-p22.jpg",
-      "sourceSha256": "d3363b2308ec327ef33e7bf78b22024c5ae73bf0ad2ab3ceda7fa690bde6c19f",
-      "deliverySha256": "317531c611d03e5d746ddabbb195eb732870ae04baf3370aa1087e850fed1d4d",
-      "deliveryBytes": 2332955
+      "sourceSha256": "847902cd64fe8a4a44c25fdb6f40b07cffc5867f7f7b1266f10fa2ec30353595",
+      "deliverySha256": "eca590a09df61baa26dfef168da61f8cdf60de4c924d5b9dc15498c7b2fcf317",
+      "deliveryBytes": 2347203
     },
     {
       "source": "p23.png",
@@ -193,16 +193,16 @@
     {
       "source": "p24.png",
       "archive": "25-p24.jpg",
-      "sourceSha256": "6a782f3cdc8d561f003a9ba36ae62ff981dd027ba9cb24cfed0fa1aacee0f733",
-      "deliverySha256": "66a60800bf11fb03beb5b7cb4c4b3c9d3e3478c5d2110bcfcb778ad938dac472",
-      "deliveryBytes": 1440311
+      "sourceSha256": "9c1573cb3bd1316445ac5ffed03e0055f8f5425ecf052b01a2fd87852d96db6e",
+      "deliverySha256": "1121f14930fc6bcaae9230596b8872f8b1d02c5ccab3aaa07b7e91c770aa93bd",
+      "deliveryBytes": 1378607
     },
     {
       "source": "26-cover-back.png",
       "archive": "26-cover-back.jpg",
-      "sourceSha256": "e1b879cde3a6837ecff86895c097172dfb4e384832e814826b4c336322e41c54",
-      "deliverySha256": "9438c5d3c84c25aa933838cac3fc4008b36c2169fb7d8fa5dce31c5e96bf5125",
-      "deliveryBytes": 1957637
+      "sourceSha256": "af129782668f49971e95f53100e8112abd82244ea8b91e8633ed8cb221989533",
+      "deliverySha256": "38373f73a3177c7ce1f50e87337ae1fe513222c5e49130912c63daa71167a017",
+      "deliveryBytes": 1307688
     }
   ]
 }
