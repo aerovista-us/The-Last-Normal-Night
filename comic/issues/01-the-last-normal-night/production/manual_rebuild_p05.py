@@ -28,16 +28,15 @@ def header(p):
 def footer(p):
     d=ImageDraw.Draw(p); y=H-FOOTER_H; d.rectangle((0,y,W,H),fill=INK); d.text((42,y+20),'EchoStory · EP1 · THE LAST NORMAL NIGHT',font=F(22),fill='#d8e0e4'); d.text((1510,y+20),'05',font=F(23,True),fill=WHITE)
 def signal_states(img,x,y):
-    d=ImageDraw.Draw(img)
-    card=(x,y,x+580,y+160); d.rounded_rectangle(card,radius=25,fill='#081018',outline='#dce6e8',width=3)
+    d=ImageDraw.Draw(img); card=(x,y,x+580,y+160)
+    d.rounded_rectangle(card,radius=25,fill='#081018',outline='#dce6e8',width=3)
     starts=[x+48,x+235,x+422]; counts=[1,4,0]
     for idx,(sx,count) in enumerate(zip(starts,counts)):
-        base=y+104
+        base=y+112
         for i in range(4):
             bh=18+20*i; fill='#eef4f5' if i<count else '#445058'
             d.rectangle((sx+i*22,base-bh,sx+i*22+13,base),fill=fill)
-        if idx<2: d.text((sx+112,y+61),'→',font=F(26,True),fill='#9fb0b8')
-    d.text((x+446,y+116),'NONE',font=F(17,True),fill='#c9d3d8')
+        if idx<2: d.text((sx+112,y+64),'→',font=F(26,True),fill='#9fb0b8')
 
 mystery=Image.open(MYSTERY).convert('RGB'); noir=Image.open(NOIR).convert('RGB')
 p=Image.new('RGB',(W,H),INK); header(p); footer(p); d=ImageDraw.Draw(p)
@@ -51,12 +50,13 @@ a=fit(mystery,(p1[2]-p1[0],p1[3]-p1[1]),(0,0,1015,360),(.47,.56)); p.paste(a,p1[
 a=fit(mystery,(p2[2]-p2[0],p2[3]-p2[1]),(0,360,1015,645),(.43,.52)); a=ImageEnhance.Brightness(a).enhance(.34); a=ImageEnhance.Color(a).enhance(.72)
 ov=Image.new('RGBA',a.size,(0,0,0,0)); od=ImageDraw.Draw(ov); od.ellipse((1180,-120,1770,390),fill=(2,7,11,205)); ov=ov.filter(ImageFilter.GaussianBlur(60)); a=Image.alpha_composite(a.convert('RGBA'),ov).convert('RGB'); p.paste(a,p2[:2]); border(d,p2)
 d.text((1430,p2[1]+330),'TCHK',font=F(44,True),fill=WHITE,stroke_width=2,stroke_fill='#111')
-# 05.3 — phone remains in his hand on the street. The three bar states are layout lettering, not source text.
+# 05.3 — phone remains in his hand on the street. Crop excludes the source-board gutter.
 mid=p3[0]+760
-left=fit(mystery,(760,p3[3]-p3[1]),(220,1180,820,1535),(.56,.52)); p.paste(left,(p3[0],p3[1]))
+left=fit(mystery,(760,p3[3]-p3[1]),(220,1220,820,1535),(.56,.50)); p.paste(left,(p3[0],p3[1]))
 right=fit(noir,(p3[2]-mid,p3[3]-p3[1]),(0,1210,1015,1548),(.64,.52)); p.paste(right,(mid,p3[1]))
 d.line((mid,p3[1],mid,p3[3]),fill=WHITE,width=7); border(d,p3)
-signal_states(p,p3[0]+75,p3[1]+500); bubble(d,1500,p3[1]+405,'Come on.',300,27)
+# The controlled bar strip covers the generated source time and depicts 1 → 5 → none without debug labels.
+signal_states(p,p3[0]+75,p3[1]+115); bubble(d,1500,p3[1]+405,'Come on.',300,27)
 # 05.4 — same ordinary street continuity, now read as empty of any possible speaker.
 a=fit(mystery,(p4[2]-p4[0],p4[3]-p4[1]),(0,645,1015,905),(.42,.54)); p.paste(a,p4[:2]); border(d,p4)
 whisper(d,1420,p4[1]+250,'Don’t go home.',420,26); bubble(d,470,p4[1]+390,'Hello?',250,27)
@@ -64,6 +64,6 @@ whisper(d,1420,p4[1]+250,'Don’t go home.',420,26); bubble(d,470,p4[1]+390,'Hel
 out=PAGES/'p05.png'; p.save(out,'PNG',optimize=True,dpi=(300,300)); sha=hashlib.sha256(out.read_bytes()).hexdigest()
 (ART/'MANUAL_P05_2026-09-16.md').write_text(
     '# EP1 Manual Page 05 Promotion\n\n'
-    'Four-panel manual rebuild from the locked script. Lamp-on/lamp-off continuity is intentional. The phone stays in the protagonist’s hand on the street, the three signal states are added during layout, and the whisper panel uses ordinary pre-rupture street geography with no visible speaker. No storyboard or production-note lettering is rendered.\n\n'
+    'Four-panel manual rebuild from the locked script. Lamp-on/lamp-off continuity is intentional. The phone stays in the protagonist’s hand on the street; its source time and board gutter are removed beneath controlled 1-to-5-to-none signal-state artwork. The whisper panel remains ordinary pre-rupture street geography with no visible speaker. No storyboard or production-note lettering is rendered.\n\n'
     f'- Size: {W}×{H}\n- SHA-256: `{sha}`\n',encoding='utf-8')
 print('manual P05 complete',sha)
