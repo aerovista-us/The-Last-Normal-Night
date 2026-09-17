@@ -92,7 +92,7 @@ bubble(d,p5[0]+690,p5[3]-250,'Wait.',220,27)
 
 out=PAGES/'p06.png'; p.save(out,'PNG',optimize=True,dpi=(300,300))
 sha=hashlib.sha256(out.read_bytes()).hexdigest()
-(ART/'MANUAL_P06_2026-09-17.md').write_text(
+(ART/'MANUAL_P06_2026-09-16.md').write_text(
     '# EP1 Manual Page 06 Promotion\n\n'
     'Five-panel deterministic rebuild from the locked script. Production labels are removed. '
     'The white sedan is presented twice from the same direction with distinct framing, and the controlled digital sign reverses from 11:58 to 11:57. '
